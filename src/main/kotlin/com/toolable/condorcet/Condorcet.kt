@@ -8,7 +8,7 @@ class Condorcet<T : Any>(val candidates: Set<T>) {
 
     val matrix: Table<T, T, Int> = HashBasedTable.create()
 
-    fun vote(orderedChoices: List<T>, weight: Int = 1) {
+    fun vote(orderedChoices: List<T>, voices: Int = 1) {
         Preconditions.checkArgument(orderedChoices.size == candidates.size)
         Preconditions.checkArgument(orderedChoices.all { it in candidates })
 
@@ -19,7 +19,7 @@ class Condorcet<T : Any>(val candidates: Set<T>) {
 
             if (rest.isNotEmpty()) {
                 for (loser in rest)
-                    matrix[candidate, loser] = weight + (matrix[candidate, loser] ?: 0)
+                    matrix[candidate, loser] = voices + (matrix[candidate, loser] ?: 0)
             }
         }
     }
