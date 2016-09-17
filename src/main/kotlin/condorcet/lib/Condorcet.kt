@@ -1,4 +1,4 @@
-package com.toolable.condorcet
+package condorcet.lib
 
 import com.google.common.base.Preconditions
 import com.google.common.collect.HashBasedTable

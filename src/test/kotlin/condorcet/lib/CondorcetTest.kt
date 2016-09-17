@@ -1,4 +1,4 @@
-package com.toolable.condorcet
+package condorcet.lib
 
 import org.junit.Assert
 import org.junit.Test
