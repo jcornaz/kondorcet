@@ -10,10 +10,10 @@ class CondorcetTest {
         val vote = Condorcet(setOf("A", "B", "C"))
 
         IntRange
-        vote.vote(listOf("A", "C", "B"), 23)
-        vote.vote(listOf("B", "C", "A"), 19)
-        vote.vote(listOf("C", "B", "A"), 16)
-        vote.vote(listOf("C", "A", "B"), 2)
+        vote.vote(Ballot.of("A", "C", "B"), 23)
+        vote.vote(Ballot.of("B", "C", "A"), 19)
+        vote.vote(Ballot.of("C", "B", "A"), 16)
+        vote.vote(Ballot.of("C", "A", "B"), 2)
 
         val winner = vote.winner()
         Assert.assertNotNull(winner)

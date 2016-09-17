@@ -1,4 +1,4 @@
-group 'com.toolable'
+group 'condorcet'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -21,6 +21,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.google.guava:guava:19.0'
+    compile 'org.jgrapht:jgrapht-core:0.9.2'
 
     testCompile 'junit:junit:4.12'
 }

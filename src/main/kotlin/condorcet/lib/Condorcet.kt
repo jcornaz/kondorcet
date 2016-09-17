@@ -4,23 +4,21 @@ import com.google.common.base.Preconditions
 import com.google.common.collect.HashBasedTable
 import com.google.common.collect.Table
 
-class Condorcet<T : Any>(val candidates: Set<T>) {
+class Condorcet<T : Any>(val candidates: Set<T>) : Poll<T> {
 
     val matrix: Table<T, T, Int> = HashBasedTable.create()
 
-    fun vote(orderedChoices: List<T>, voices: Int = 1) {
-        Preconditions.checkArgument(orderedChoices.size == candidates.size)
-        Preconditions.checkArgument(orderedChoices.all { it in candidates })
+    override fun vote(ballot: Ballot<T>, multiple: Int) {
+        Preconditions.checkArgument(ballot.candidates.all { it in candidates })
 
         var rest = candidates
 
-        for (candidate in orderedChoices) {
-            rest -= candidate
+        for (candidateList in ballot.orderedCandidates) {
+            rest -= candidateList
 
-            if (rest.isNotEmpty()) {
-                for (loser in rest)
-                    matrix[candidate, loser] = voices + (matrix[candidate, loser] ?: 0)
-            }
+            for (loser in rest)
+                for (candidate in candidateList)
+                    matrix[candidate, loser] = multiple + (matrix[candidate, loser] ?: 0)
         }
     }
 
@@ -29,4 +27,6 @@ class Condorcet<T : Any>(val candidates: Set<T>) {
     }
 
     fun winner(): T? = candidates.firstOrNull { isWinner(it) }
+
+    override fun result() = winner()?.let { Ballot.of(it) } ?: Ballot.blank<T>()
 }
