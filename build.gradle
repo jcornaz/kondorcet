@@ -14,8 +14,7 @@ buildscript {
 
 apply plugin: 'kotlin'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.6
+sourceCompatibility = 1.7
 
 repositories {
     mavenCentral()
@@ -23,7 +22,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'org.jgrapht:jgrapht-core:1.0.0'
+    compile 'org.jgrapht:jgrapht-core:0.9.2'
 
     testCompile 'junit:junit:4.12'
 }
