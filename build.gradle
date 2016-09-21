@@ -18,11 +18,12 @@ sourceCompatibility = 1.7
 
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'org.jgrapht:jgrapht-core:0.9.2'
+    compile 'com.github.slimaku:kraft:v0.1.2'
 
     testCompile 'junit:junit:4.12'
 }
