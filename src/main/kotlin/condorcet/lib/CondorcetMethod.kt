@@ -17,23 +17,13 @@ class CondorcetMethod<T : Any> : Poll<T> {
     }
 
     override fun result(): Ballot<T> {
-        val graph = DefaultDirectedWeightedPseudoGraph<T, Int>().apply {
+
+        val result = DefaultDirectedWeightedPseudoGraph<T, Int>().apply {
             for ((ballot, count) in ballots)
                 add(ballot, count)
 
             simplify()
-        }
-
-        val winners = graph.vertices.filter { graph.degreeFrom(it) > 0 && graph.degreeTo(it) == 0 }.toSet()
-        val losers = graph.vertices - winners
-
-        var result = emptyList<Set<T>>()
-
-        if (winners.isNotEmpty())
-            result += listOf(winners)
-
-        if (losers.isNotEmpty())
-            result += listOf(losers)
+        }.consumeResult()
 
         return Ballot(result)
     }

@@ -1,11 +1,12 @@
 package condorcet.lib
 
+import kraft.DirectedGraph
 import kraft.DirectedWeightedPseudoGraph
 
 /**
  * Add a ballot the the graph.
  *
- * This method create or update edges from the winners to the loosers with weight representing how many times the winners won.
+ * This method create or update edges from the winners to the losers with weight representing how many times the winners won.
  *
  * @param ballot Ballot to add
  * @param count How many times to add the ballot
@@ -51,4 +52,30 @@ fun <T> DirectedWeightedPseudoGraph<T, Int>.simplify() {
             }
         }
     }
+}
+
+/**
+ * Remove all the vertices of the graph to create an list of set ordered from the winners to the losers
+ */
+fun <T> DirectedGraph<T>.consumeResult(): List<Set<T>> {
+
+    var losers = kotlin.collections.emptyList<Set<T>>()
+    var candidates = vertices.filter { degreeFrom(it) == 0 }
+    while (vertices.isNotEmpty() && candidates.isNotEmpty()) {
+        removeVertices(candidates)
+        losers = kotlin.collections.listOf(candidates.toSet()) + losers
+        candidates = vertices.filter { degreeFrom(it) == 0 }
+    }
+
+    var winners = kotlin.collections.emptyList<Set<T>>()
+    candidates = vertices.filter { degreeTo(it) == 0 }
+    while (vertices.isNotEmpty() && candidates.isNotEmpty()) {
+        removeVertices(candidates)
+        winners += kotlin.collections.listOf(candidates.toSet())
+        candidates = vertices.filter { degreeTo(it) == 0 }
+    }
+
+    val middleClass = vertices.let { if (it.isEmpty()) kotlin.collections.emptyList() else kotlin.collections.listOf(it) }
+
+    return winners + middleClass + losers
 }
