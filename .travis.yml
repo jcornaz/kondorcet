@@ -12,7 +12,3 @@ jdk:
 
 before_install:
   - chmod +x gradlew
-
-after_script:
-  - test $TRAVIS_JDK_VERSION = "oraclejdk8" \
-    && ./gradlew publishGhPages
