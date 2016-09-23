@@ -1,5 +1,5 @@
 # Condorcet
-[![Build Status](https://travis-ci.org/slimaku/kondorcet.svg?branch=develop)](https://travis-ci.org/slimaku/kondorcet)
+[![Build Status](https://travis-ci.org/slimaku/kondorcet.svg?branch=master)](https://travis-ci.org/slimaku/kondorcet)
 
 Library to make a vote using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
 
