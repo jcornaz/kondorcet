@@ -1,4 +1,4 @@
-package condorcet.lib
+package kondorcet
 
 import kraft.algo.widestPaths
 import kraft.graph.pseudo.DefaultDirectedWeightedPseudoGraph

@@ -1,4 +1,4 @@
-package condorcet.lib
+package kondorcet
 
 import kraft.graph.pseudo.DefaultDirectedWeightedPseudoGraph
 import java.util.*

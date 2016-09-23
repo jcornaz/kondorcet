@@ -1,4 +1,4 @@
-package condorcet.lib
+package kondorcet
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

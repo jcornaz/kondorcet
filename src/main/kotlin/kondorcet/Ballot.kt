@@ -1,4 +1,4 @@
-package condorcet.lib
+package kondorcet
 
 import java.util.*
 

@@ -1,4 +1,4 @@
-package condorcet.lib
+package kondorcet
 
 /**
  * A poll receive ballots and provide a result

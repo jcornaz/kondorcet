@@ -1,4 +1,4 @@
-package condorcet.lib
+package kondorcet
 
 import kraft.DirectedGraph
 import kraft.DirectedWeightedPseudoGraph
@@ -59,23 +59,23 @@ fun <T> DirectedWeightedPseudoGraph<T, Int>.simplify() {
  */
 fun <T> DirectedGraph<T>.consumeResult(): List<Set<T>> {
 
-    var losers = kotlin.collections.emptyList<Set<T>>()
+    var losers = emptyList<Set<T>>()
     var candidates = vertices.filter { degreeFrom(it) == 0 }
     while (vertices.isNotEmpty() && candidates.isNotEmpty()) {
         removeVertices(candidates)
-        losers = kotlin.collections.listOf(candidates.toSet()) + losers
+        losers = listOf(candidates.toSet()) + losers
         candidates = vertices.filter { degreeFrom(it) == 0 }
     }
 
-    var winners = kotlin.collections.emptyList<Set<T>>()
+    var winners = emptyList<Set<T>>()
     candidates = vertices.filter { degreeTo(it) == 0 }
     while (vertices.isNotEmpty() && candidates.isNotEmpty()) {
         removeVertices(candidates)
-        winners += kotlin.collections.listOf(candidates.toSet())
+        winners += listOf(candidates.toSet())
         candidates = vertices.filter { degreeTo(it) == 0 }
     }
 
-    val middleClass = vertices.let { if (it.isEmpty()) kotlin.collections.emptyList() else kotlin.collections.listOf(it) }
+    val middleClass = vertices.let { if (it.isEmpty()) emptyList() else listOf(it) }
 
     return winners + middleClass + losers
 }
