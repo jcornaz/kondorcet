@@ -2,6 +2,13 @@ package condorcet.lib
 
 import java.util.*
 
+/**
+ * Vote ballot
+ *
+ * Contains all the candidates ordered by preferences.
+ *
+ * @property orderedCandidates Each element of this list is a set of candidate who are ex aequo.
+ */
 data class Ballot<T : Any>(val orderedCandidates: List<Set<T>> = emptyList()) {
 
     companion object {
