@@ -31,7 +31,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.slimaku:kondorcet:master-SNAPSHOT'
+    compile 'com.github.slimaku:kondorcet:v1.0-rc1'
 }
 ```
 
