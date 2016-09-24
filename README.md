@@ -32,10 +32,10 @@ Poll<Character> poll = SchulzeMethod<Character>()
 
 // Add ballots to the poll
 // Theses ballot contains the candidates ordered by prefernces
-poll.vote(Ballot<Character>('A', 'C', 'B', 'E', 'D'), 5)
-poll.vote(Ballot<Character>('A', 'D', 'E', 'C', 'B'), 5)
-poll.vote(Ballot<Character>('B', 'E', 'D', 'A', 'C'), 8)
-poll.vote(Ballot<Character>('C', 'A', 'B', 'E', 'D'), 3)
+poll.vote(Ballot.of('A', 'C', 'B', 'E', 'D'), 5)
+poll.vote(Ballot.of('A', 'D', 'E', 'C', 'B'), 5)
+poll.vote(Ballot.of('B', 'E', 'D', 'A', 'C'), 8)
+poll.vote(Ballot.of('C', 'A', 'B', 'E', 'D'), 3)
 
 // Compute an return the result
 // The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
