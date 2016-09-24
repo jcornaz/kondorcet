@@ -1,5 +1,6 @@
 package kondorcet
 
+import kondorcet.method.CondorcetMethod
 import org.junit.Assert
 import org.junit.Test
 
@@ -7,7 +8,7 @@ class CondorcetMethodTest {
 
     @Test
     fun testCondorcetWinner() {
-        val poll = CondorcetMethod<Char>()
+        val poll = SimplePoll<Char>()
 
         poll.vote(ballot('A', 'C', 'B'), 23)
         poll.vote(ballot('B', 'C', 'A'), 19)
@@ -15,19 +16,19 @@ class CondorcetMethodTest {
         poll.vote(ballot('C', 'A', 'B'), 2)
 
         val expected = ballot('C', 'B', 'A')
-        val actual = poll.result()
+        val actual = poll.result(CondorcetMethod)
 
         Assert.assertEquals(expected, actual)
     }
 
     /**
-     * Test the result when there is condorcet paradox :
+     * Test the resultOf when there is condorcet paradox :
      *
      * This test a case given here : https://en.wikipedia.org/wiki/Schulze_method#Satisfied_criteria
      */
     @Test
     fun testParadoxSolving() {
-        val poll = CondorcetMethod<Char>()
+        val poll = SimplePoll<Char>()
 
         poll.vote(ballot('A', 'C', 'B', 'E', 'D'), 5)
         poll.vote(ballot('A', 'D', 'E', 'C', 'B'), 5)
@@ -39,20 +40,20 @@ class CondorcetMethodTest {
         poll.vote(ballot('E', 'B', 'A', 'D', 'C'), 8)
 
         val expected = ballot(setOf('E', 'A', 'C', 'B', 'D'))
-        val actual = poll.result()
+        val actual = poll.result(CondorcetMethod)
 
         Assert.assertEquals(expected, actual)
     }
 
     @Test
     fun testExAequoOnTheMiddle() {
-        val poll = SchulzeMethod<Char>()
+        val poll = SimplePoll<Char>()
 
         poll.vote(ballot('A', 'B', 'C', 'D'))
         poll.vote(ballot('A', 'C', 'B', 'D'))
 
         val expected = ballot(setOf('A'), setOf('B', 'C'), setOf('D'))
-        val actual = poll.result()
+        val actual = poll.result(CondorcetMethod)
 
         Assert.assertEquals(expected, actual)
     }

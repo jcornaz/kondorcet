@@ -1,9 +1,14 @@
 package kondorcet
 
 /**
- * A poll receive ballots and provide a result
+ * A poll receive ballots and provide a resultOf
  */
 interface Poll<T : Any> {
+
+    /**
+     * Set of ballots in the poll
+     */
+    val ballots: Map<Ballot<T>, Int>
 
     /**
      * Add a ballot to the pool
@@ -12,11 +17,4 @@ interface Poll<T : Any> {
      * @param count How many of the the ballot should be counted
      */
     fun vote(ballot: Ballot<T>, count: Int = 1)
-
-    /**
-     * Compute the result
-     *
-     * @return A ballot which is the most representative of the votes.
-     */
-    fun result(): Ballot<T>
 }
