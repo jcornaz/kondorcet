@@ -14,8 +14,8 @@ class SchulzeMethodTest {
         poll.vote(Ballot.of('C', 'B', 'A'), 16)
         poll.vote(Ballot.of('C', 'A', 'B'), 2)
 
-        val expected = listOf('C', 'B', 'A').map { setOf(it) }
-        val actual = poll.result().orderedCandidates
+        val expected = Ballot.of('C', 'B', 'A')
+        val actual = poll.result()
 
         assertEquals(expected, actual)
     }
@@ -38,8 +38,21 @@ class SchulzeMethodTest {
         poll.vote(Ballot.of('D', 'C', 'E', 'B', 'A'), 7)
         poll.vote(Ballot.of('E', 'B', 'A', 'D', 'C'), 8)
 
-        val expected = listOf('E', 'A', 'C', 'B', 'D').map { setOf(it) }
-        val actual = poll.result().orderedCandidates
+        val expected = Ballot.of('E', 'A', 'C', 'B', 'D')
+        val actual = poll.result()
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun testExAequoOnTheMiddle() {
+        val poll = SchulzeMethod<Char>()
+
+        poll.vote(Ballot.of('A', 'B', 'C', 'D'))
+        poll.vote(Ballot.of('A', 'C', 'B', 'D'))
+
+        val expected = Ballot(listOf(setOf('A'), setOf('B', 'C'), setOf('D')))
+        val actual = poll.result()
 
         assertEquals(expected, actual)
     }
