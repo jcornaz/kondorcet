@@ -4,4 +4,4 @@
 
 Library to make a vote using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
 
-[KDoc](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/)
+[KDoc](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet/index.html)

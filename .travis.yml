@@ -11,3 +11,7 @@ jdk:
 
 before_install:
   - chmod +x gradlew
+
+after_success:
+  - test $TRAVIS_JDK_VERSION = "oraclejdk8" \
+    && bash <(curl -s https://codecov.io/bash)
