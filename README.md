@@ -33,7 +33,9 @@ Depending on the given ballots and the used method, there can be ex aequo betwee
 In such case `poll.result()` would return something like "[[A, B], [C]]" which would mean : A and B are ex aequo, but both win agains C.
 
 ## Add the library to your project
-With [Gradle](https://gradle.org)
+You need a JDK 6 or newer
+
+With [Gradle](https://gradle.org) :
 ```gradle
 repositories {
     mavenCentral()
