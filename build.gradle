@@ -69,6 +69,27 @@ task kotlinCoverageReport(dependsOn: 'jacocoTestReport') << {
     println("open $output.path")
 }
 
+task sourcesJar(type: Jar) {
+    from sourceSets.main.kotlin.srcDirs
+    classifier = 'sources'
+}
+
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = "javadoc"
+    outputDirectory = "$buildDir/dokkaJavadoc"
+}
+
+// build a jar with javadoc
+task javadocJar(type: Jar, dependsOn: dokkaJavadoc) {
+    classifier = 'javadoc'
+    from dokkaJavadoc.outputDirectory
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
 githubPages {
     pages {
         from dokka
