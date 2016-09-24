@@ -19,15 +19,11 @@ class SchulzeMethod<T : Any> : Poll<T> {
         ballots[ballot] = (ballots[ballot] ?: 0) + count
     }
 
-    override fun result(): Ballot<T> {
+    override fun result(): Ballot<T> =
+            DefaultDirectedWeightedPseudoGraph<T, Int>().let {
+                for ((ballot, count) in ballots)
+                    it.add(ballot, count)
 
-        val result = DefaultDirectedWeightedPseudoGraph<T, Int>().let {
-            for ((ballot, count) in ballots)
-                it.add(ballot, count)
-
-            it.widestPaths(0)
-        }.apply { simplify() }.consumeResult()
-
-        return Ballot(result)
-    }
+                it.widestPaths(0)
+            }.apply { simplify() }.consumeResult()
 }

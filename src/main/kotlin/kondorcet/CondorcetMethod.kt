@@ -16,15 +16,11 @@ class CondorcetMethod<T : Any> : Poll<T> {
         ballots[ballot] = (ballots[ballot] ?: 0) + count
     }
 
-    override fun result(): Ballot<T> {
+    override fun result(): Ballot<T> =
+            DefaultDirectedWeightedPseudoGraph<T, Int>().apply {
+                for ((ballot, count) in ballots)
+                    add(ballot, count)
 
-        val result = DefaultDirectedWeightedPseudoGraph<T, Int>().apply {
-            for ((ballot, count) in ballots)
-                add(ballot, count)
-
-            simplify()
-        }.consumeResult()
-
-        return Ballot(result)
-    }
+                simplify()
+            }.consumeResult()
 }

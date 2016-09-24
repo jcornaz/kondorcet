@@ -57,25 +57,25 @@ fun <T> DirectedWeightedPseudoGraph<T, Int>.simplify() {
 /**
  * Remove all the vertices of the graph to create an list of set ordered from the winners to the losers
  */
-fun <T> DirectedGraph<T>.consumeResult(): List<Set<T>> {
+fun <T : Any> DirectedGraph<T>.consumeResult(): Ballot<T> {
 
-    var losers = emptyList<Set<T>>()
+    var losers = emptyBallot<T>()
     var candidates = vertices.filter { degreeFrom(it) == 0 }
     while (vertices.isNotEmpty() && candidates.isNotEmpty()) {
         removeVertices(candidates)
-        losers = listOf(candidates.toSet()) + losers
+        losers = ballot(candidates) + losers
         candidates = vertices.filter { degreeFrom(it) == 0 }
     }
 
-    var winners = emptyList<Set<T>>()
+    var winners = emptyBallot<T>()
     candidates = vertices.filter { degreeTo(it) == 0 }
     while (vertices.isNotEmpty() && candidates.isNotEmpty()) {
         removeVertices(candidates)
-        winners += listOf(candidates.toSet())
+        winners += ballot(candidates)
         candidates = vertices.filter { degreeTo(it) == 0 }
     }
 
-    val middleClass = vertices.let { if (it.isEmpty()) emptyList() else listOf(it) }
+    val middleClass = vertices.let { if (it.isEmpty()) emptyBallot() else ballot(it) }
 
     return winners + middleClass + losers
 }

@@ -7,13 +7,13 @@ class BallotTest {
 
     @Test
     fun hasDuplicates() {
-        assertFalse(Ballot.of(1, 2, 3).hasDuplicates)
-        assertTrue(Ballot.of(1, 2, 1).hasDuplicates)
+        assertFalse(ballot(1, 2, 3).hasDuplicates())
+        assertTrue(ballot(1, 2, 1).hasDuplicates())
     }
 
     @Test
     fun Winner() {
-        assertNull(Ballot(listOf(setOf(1, 2))).winner)
-        assertEquals(1, Ballot.of(1, 2).winner)
+        assertNull(ballot(setOf(1, 2)).winner)
+        assertEquals(1, ballot(1, 2).winner)
     }
 }
