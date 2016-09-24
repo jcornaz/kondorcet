@@ -27,6 +27,7 @@ val result = poll.result()
 With [Gradle](https://gradle.org)
 ```gradle
 repositories {
+    mavenCentral()
     maven { url "https://jitpack.io" }
 }
 
