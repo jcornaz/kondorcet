@@ -26,6 +26,7 @@ apply plugin: 'org.ajoberstar.github-pages'
 apply plugin: 'jacoco'
 
 sourceCompatibility = 1.6
+targetCompatibility = 1.6
 
 repositories {
     mavenCentral()
