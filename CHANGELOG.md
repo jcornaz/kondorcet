@@ -5,6 +5,7 @@
 * Polls
     * `SimplePoll` simply store ballots
     * `CheckedPoll` check the validity of the ballots
+* The `RelativeMajorityMethod` where the winner is the one who is the winner with the more ballots
 
 ### Changed
 * The `Ballot` is now an interface and a `DefaultBallot` class has been added
