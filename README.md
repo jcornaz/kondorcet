@@ -1,11 +1,46 @@
-# Condorcet
+# Kondorcet
 [![Build Status](https://travis-ci.org/slimaku/kondorcet.svg?branch=master)](https://travis-ci.org/slimaku/kondorcet)
 [![Code covertage](https://codecov.io/gh/slimaku/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/slimaku/kondorcet)
 [![JitPack](https://jitpack.io/v/slimaku/kondorcet.svg)](https://jitpack.io/#slimaku/kondorcet)
 
-Library to make a vote using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
+This is a library to make a vote using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
 
-[KDoc](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet/index.html)
+## Usage exemple
+### From kotlin
+```kotlin
+// Create a poll that will be solved using the Schulze method 
+// See https://en.wikipedia.org/wiki/Schulze_method
+val poll = SchulzeMethod<Char>()
+
+// Add ballots to the poll
+// Theses ballot contains the candidates ordered by prefernces
+poll.vote(Ballot.of('A', 'C', 'B', 'E', 'D'), 5)
+poll.vote(Ballot.of('A', 'D', 'E', 'C', 'B'), 5)
+poll.vote(Ballot.of('B', 'E', 'D', 'A', 'C'), 8)
+poll.vote(Ballot.of('C', 'A', 'B', 'E', 'D'), 3)
+
+// Compute an return the result
+// The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
+val result = poll.result()
+```
+
+### From java
+```java
+// Create a poll that will be solved using the Schulze method 
+// See https://en.wikipedia.org/wiki/Schulze_method
+Poll<Character> poll = SchulzeMethod<Character>()
+
+// Add ballots to the poll
+// Theses ballot contains the candidates ordered by prefernces
+poll.vote(Ballot<Character>('A', 'C', 'B', 'E', 'D'), 5)
+poll.vote(Ballot<Character>('A', 'D', 'E', 'C', 'B'), 5)
+poll.vote(Ballot<Character>('B', 'E', 'D', 'A', 'C'), 8)
+poll.vote(Ballot<Character>('C', 'A', 'B', 'E', 'D'), 3)
+
+// Compute an return the result
+// The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
+Ballot<Character> result = poll.result()
+```
 
 ## Add the library to your project
 With [Gradle](https://gradle.org)
@@ -20,3 +55,6 @@ dependencies {
 ```
 
 You can also use [Jitpack](https://jitpack.io/#slimaku/kraft) with maven, sbt or leiningen.
+
+## Documentation
+[KDoc](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet/index.html)
