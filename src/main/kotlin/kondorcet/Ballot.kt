@@ -12,9 +12,9 @@ import java.util.*
 data class Ballot<T : Any>(val orderedCandidates: List<Set<T>> = emptyList()) {
 
     companion object {
-        @JvmStatic fun <T : Any> blank() = Ballot<T>(emptyList())
-        @JvmStatic fun <T : Any> of(candidates: List<T>) = Ballot(candidates.map { setOf(it) })
-        @JvmStatic fun <T : Any> of(vararg candidates: T) = of(candidates.toList())
+        fun <T : Any> blank() = Ballot<T>(emptyList())
+        fun <T : Any> of(candidates: List<T>) = Ballot(candidates.map { setOf(it) })
+        fun <T : Any> of(vararg candidates: T) = of(candidates.toList())
     }
 
     val candidates by lazy { orderedCandidates.fold(emptySet<T>()) { set, elt -> set + elt } }
