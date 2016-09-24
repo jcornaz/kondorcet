@@ -3,7 +3,7 @@
 ### Added
 * Add `winners` and `winner` properties to `Ballot`
 
-## Fixed
+### Fixed
 * The method `Ballot.hasDuplicates` result was the inversed
 
 ## 1.0-rc1
