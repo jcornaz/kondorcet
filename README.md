@@ -3,7 +3,7 @@
 [![Code covertage](https://codecov.io/gh/slimaku/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/slimaku/kondorcet)
 [![JitPack](https://jitpack.io/v/slimaku/kondorcet.svg)](https://jitpack.io/#slimaku/kondorcet)
 
-This is a Kotlin library manipulate vote polls using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
+This is a Kotlin library to manipulate vote polls using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
 
 ## Usage exemple
 ```kotlin
@@ -17,11 +17,20 @@ poll.vote(Ballot.of('A', 'C', 'B', 'E', 'D'), 5)
 poll.vote(Ballot.of('A', 'D', 'E', 'C', 'B'), 5)
 poll.vote(Ballot.of('B', 'E', 'D', 'A', 'C'), 8)
 poll.vote(Ballot.of('C', 'A', 'B', 'E', 'D'), 3)
+poll.vote(Ballot.of('C', 'A', 'E', 'B', 'D'), 7)
+poll.vote(Ballot.of('C', 'B', 'A', 'D', 'E'), 2)
+poll.vote(Ballot.of('D', 'C', 'E', 'B', 'A'), 7)
+poll.vote(Ballot.of('E', 'B', 'A', 'D', 'C'), 8)
 
 // Compute an return the result
 // The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
-val result = poll.result()
+val result: List<Set<Char>> = poll.result()
+
+println(result) // will print "[[E], [A], [C], [B], [D]]" (E is the winner)
 ```
+
+Depending on the given ballots and the used method, there can be ex aequo between the candidates.
+In such case `poll.result()` would return something like "[[A, B], [C]]" which would mean : A and B are ex aequo, but both win agains C.
 
 ## Add the library to your project
 With [Gradle](https://gradle.org)
