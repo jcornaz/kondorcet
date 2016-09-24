@@ -17,16 +17,23 @@ data class Ballot<T : Any>(val orderedCandidates: List<Set<T>> = emptyList()) {
         fun <T : Any> of(vararg candidates: T) = of(candidates.toList())
     }
 
+
     val candidates by lazy { orderedCandidates.fold(emptySet<T>()) { set, elt -> set + elt } }
+
+    val winners: Set<T>
+        get() = orderedCandidates.firstOrNull() ?: emptySet()
+
+    val winner: T?
+        get() = winners.let { if (it.size == 1) it.first() else null }
 
     val hasDuplicates by lazy {
         val set = HashSet<T>()
 
         for (stage in orderedCandidates)
             for (candidate in stage)
-                if (!set.add(candidate)) return@lazy false
+                if (!set.add(candidate)) return@lazy true
 
-        return@lazy true
+        return@lazy false
     }
 
     operator fun plus(candidates: Set<T>) = Ballot(orderedCandidates.plus<Set<T>>(candidates.toSet()))
