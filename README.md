@@ -3,7 +3,7 @@
 [![Code covertage](https://codecov.io/gh/slimaku/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/slimaku/kondorcet)
 [![JitPack](https://jitpack.io/v/slimaku/kondorcet.svg)](https://jitpack.io/#slimaku/kondorcet)
 
-This is a library to make a vote using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
+This is a Kotlin library manipulate vote polls using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
 
 ## Usage exemple
 ```kotlin
