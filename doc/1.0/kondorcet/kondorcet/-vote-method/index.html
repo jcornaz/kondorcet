@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<title>VoteMethod - kondorcet</title>
+<link rel="stylesheet" href="..\..\..\style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kondorcet</a>&nbsp;/&nbsp;<a href="../index.html">kondorcet</a>&nbsp;/&nbsp;<a href=".">VoteMethod</a><br/>
+<br/>
+<h1>VoteMethod</h1>
+<code><span class="keyword">interface </span><span class="identifier">VoteMethod</span></code>
+<p>Represent a an algorithm used to compute the winners and losers from a set of ballots.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="result-of.html">resultOf</a></td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">resultOf</span><span class="symbol">(</span><span class="identifier" id="kondorcet.VoteMethod$resultOf(kondorcet.Poll((kondorcet.VoteMethod.resultOf.T)))/poll">poll</span><span class="symbol">:</span>&nbsp;<a href="../-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Compute the resultOf of a poll</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="../../kondorcet.method/-graph-based-method/index.html">GraphBasedMethod</a></td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">GraphBasedMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">VoteMethod</span></code>
+<p>Abstraction of VoteMethod that are based on graphs</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../kondorcet.method/-relative-majority-method/index.html">RelativeMajorityMethod</a></td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">RelativeMajorityMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">VoteMethod</span></code>
+<p>The relative majority count the winners of each ballots and dont care about the others.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

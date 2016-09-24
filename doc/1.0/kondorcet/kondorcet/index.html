@@ -14,16 +14,24 @@
 <td>
 <a href="-ballot/index.html">Ballot</a></td>
 <td>
-<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span></code>
-<p>Vote ballot</p>
+<code><span class="keyword">interface </span><span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span></code>
+<p>Represent a ballot</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="-condorcet-method/index.html">CondorcetMethod</a></td>
+<a href="-checked-poll/index.html">CheckedPoll</a></td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">CondorcetMethod</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Standard condorcet method poll. It does not ensure to get a single winner, but if it does this guaranteed to be a condorcet winner.</p>
+<code><span class="keyword">class </span><span class="identifier">CheckedPoll</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>An implementation of <a href="-poll/index.html">Poll</a> that check that ballots does not have duplicate before to take it</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="-default-ballot/index.html">DefaultBallot</a></td>
+<td>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">DefaultBallot</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Vote ballot</p>
 </td>
 </tr>
 <tr>
@@ -31,32 +39,57 @@
 <a href="-poll/index.html">Poll</a></td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">Poll</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span></code>
-<p>A poll receive ballots and provide a result</p>
+<p>A poll receive ballots and provide a resultOf</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="-schulze-method/index.html">SchulzeMethod</a></td>
+<a href="-simple-poll/index.html">SimplePoll</a></td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">SchulzeMethod</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Schulze method poll. It ensure to get a single winner and this winner will be a condorcet winner if possible.</p>
+<code><span class="keyword">class </span><span class="identifier">SimplePoll</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>An implementation of <a href="-poll/index.html">Poll</a> that does not do anything more than store ballots</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="-vote-method/index.html">VoteMethod</a></td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VoteMethod</span></code>
+<p>Represent a an algorithm used to compute the winners and losers from a set of ballots.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<h3>Extensions for External Classes</h3>
+<h3>Functions</h3>
 <table>
 <tbody>
 <tr>
 <td>
-<a href="kraft.-directed-graph/index.html">kraft.DirectedGraph</a></td>
+<a href="ballot.html">ballot</a></td>
 <td>
-</td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">ballot</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="kondorcet$ballot(kotlin.Array((kondorcet.ballot.T)))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">ballot</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="kondorcet$ballot(kotlin.Array((kotlin.collections.Collection((kondorcet.ballot.T)))))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
-<a href="kraft.-directed-weighted-pseudo-graph/index.html">kraft.DirectedWeightedPseudoGraph</a></td>
+<a href="empty-ballot.html">emptyBallot</a></td>
 <td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">emptyBallot</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<a href="plus.html">plus</a></td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet$plus(kondorcet.Ballot((kondorcet.plus.T)), kondorcet.Ballot((kondorcet.plus.T)))/ballot">ballot</span><span class="symbol">:</span>&nbsp;<a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet$plus(kondorcet.Ballot((kondorcet.plus.T)), kotlin.collections.Collection((kondorcet.plus.T)))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet$plus(kondorcet.Ballot((kondorcet.plus.T)), kondorcet.plus.T)/candidate">candidate</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<a href="result.html">result</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <a href="-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">result</span><span class="symbol">(</span><span class="identifier" id="kondorcet$result(kondorcet.Poll((kondorcet.result.T)), kondorcet.VoteMethod)/method">method</span><span class="symbol">:</span>&nbsp;<a href="-vote-method/index.html"><span class="identifier">VoteMethod</span></a>&nbsp;<span class="symbol">=</span>&nbsp;SchulzeMethod<span class="symbol">)</span><span class="symbol">: </span><a href="-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Compute the result of a poll</p>
 </td>
 </tr>
 </tbody>

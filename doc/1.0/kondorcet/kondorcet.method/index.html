@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<title>kondorcet.method - kondorcet</title>
+<link rel="stylesheet" href="..\..\style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kondorcet</a>&nbsp;/&nbsp;<a href=".">kondorcet.method</a><br/>
+<br/>
+<h2>Package kondorcet.method</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="-condorcet-method/index.html">CondorcetMethod</a></td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">CondorcetMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-graph-based-method/index.html"><span class="identifier">GraphBasedMethod</span></a></code>
+<p>Standard condorcet method poll. It does not ensure to get a single winner, but if it does this guaranteed to be a condorcet winner.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="-graph-based-method/index.html">GraphBasedMethod</a></td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">GraphBasedMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../kondorcet/-vote-method/index.html"><span class="identifier">VoteMethod</span></a></code>
+<p>Abstraction of <a href="../kondorcet/-vote-method/index.html">VoteMethod</a> that are based on graphs</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="-relative-majority-method/index.html">RelativeMajorityMethod</a></td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">RelativeMajorityMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../kondorcet/-vote-method/index.html"><span class="identifier">VoteMethod</span></a></code>
+<p>The relative majority count the winners of each ballots and dont care about the others.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="-schulze-method/index.html">SchulzeMethod</a></td>
+<td>
+<code><span class="keyword">object </span><span class="identifier">SchulzeMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-graph-based-method/index.html"><span class="identifier">GraphBasedMethod</span></a></code>
+<p>Schulze method poll. It ensure to get a single winner and this winner will be a condorcet winner if possible.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

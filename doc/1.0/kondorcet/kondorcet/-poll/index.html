@@ -8,18 +8,23 @@
 <br/>
 <h1>Poll</h1>
 <code><span class="keyword">interface </span><span class="identifier">Poll</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span></code>
-<p>A poll receive ballots and provide a result</p>
-<h3>Functions</h3>
+<p>A poll receive ballots and provide a resultOf</p>
+<h3>Properties</h3>
 <table>
 <tbody>
 <tr>
 <td>
-<a href="result.html">result</a></td>
+<a href="ballots.html">ballots</a></td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">result</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Compute the result</p>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">ballots</span><span class="symbol">: </span><span class="identifier">Map</span><span class="symbol">&lt;</span><a href="../-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code>
+<p>Set of ballots in the poll</p>
 </td>
 </tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
 <tr>
 <td>
 <a href="vote.html">vote</a></td>
@@ -30,23 +35,36 @@
 </tr>
 </tbody>
 </table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="../result.html">result</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Poll</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">result</span><span class="symbol">(</span><span class="identifier" id="kondorcet$result(kondorcet.Poll((kondorcet.result.T)), kondorcet.VoteMethod)/method">method</span><span class="symbol">:</span>&nbsp;<a href="../-vote-method/index.html"><span class="identifier">VoteMethod</span></a>&nbsp;<span class="symbol">=</span>&nbsp;SchulzeMethod<span class="symbol">)</span><span class="symbol">: </span><a href="../-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Compute the result of a poll</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3>Inheritors</h3>
 <table>
 <tbody>
 <tr>
 <td>
-<a href="../-condorcet-method/index.html">CondorcetMethod</a></td>
+<a href="../-checked-poll/index.html">CheckedPoll</a></td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">CondorcetMethod</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Poll</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Standard condorcet method poll. It does not ensure to get a single winner, but if it does this guaranteed to be a condorcet winner.</p>
+<code><span class="keyword">class </span><span class="identifier">CheckedPoll</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Poll</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>An implementation of Poll that check that ballots does not have duplicate before to take it</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../-schulze-method/index.html">SchulzeMethod</a></td>
+<a href="../-simple-poll/index.html">SimplePoll</a></td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">SchulzeMethod</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Poll</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Schulze method poll. It ensure to get a single winner and this winner will be a condorcet winner if possible.</p>
+<code><span class="keyword">class </span><span class="identifier">SimplePoll</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Poll</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>An implementation of Poll that does not do anything more than store ballots</p>
 </td>
 </tr>
 </tbody>

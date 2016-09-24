@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<title>SimplePoll - kondorcet</title>
+<link rel="stylesheet" href="..\..\..\style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kondorcet</a>&nbsp;/&nbsp;<a href="../index.html">kondorcet</a>&nbsp;/&nbsp;<a href=".">SimplePoll</a><br/>
+<br/>
+<h1>SimplePoll</h1>
+<code><span class="keyword">class </span><span class="identifier">SimplePoll</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>An implementation of <a href="../-poll/index.html">Poll</a> that does not do anything more than store ballots</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="-init-.html">&lt;init&gt;</a></td>
+<td>
+<code><span class="identifier">SimplePoll</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>An implementation of <a href="../-poll/index.html">Poll</a> that does not do anything more than store ballots</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="ballots.html">ballots</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">ballots</span><span class="symbol">: </span><span class="identifier">Map</span><span class="symbol">&lt;</span><a href="../-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code>
+<p>Set of ballots in the poll</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="vote.html">vote</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">vote</span><span class="symbol">(</span><span class="identifier" id="kondorcet.SimplePoll$vote(kondorcet.Ballot((kondorcet.SimplePoll.T)), kotlin.Int)/ballot">ballot</span><span class="symbol">:</span>&nbsp;<a href="../-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="kondorcet.SimplePoll$vote(kondorcet.Ballot((kondorcet.SimplePoll.T)), kotlin.Int)/count">count</span><span class="symbol">:</span>&nbsp;<span class="identifier">Int</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Unit</span></code>
+<p>Add a ballot to the pool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="../result.html">result</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <a href="../-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">result</span><span class="symbol">(</span><span class="identifier" id="kondorcet$result(kondorcet.Poll((kondorcet.result.T)), kondorcet.VoteMethod)/method">method</span><span class="symbol">:</span>&nbsp;<a href="../-vote-method/index.html"><span class="identifier">VoteMethod</span></a>&nbsp;<span class="symbol">=</span>&nbsp;SchulzeMethod<span class="symbol">)</span><span class="symbol">: </span><a href="../-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Compute the result of a poll</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

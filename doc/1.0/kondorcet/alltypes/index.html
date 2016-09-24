@@ -11,40 +11,70 @@
 <td>
 <a href="../kondorcet/-ballot/index.html">kondorcet.Ballot</a></td>
 <td>
-<p>Vote ballot</p>
+<p>Represent a ballot</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../kondorcet/-condorcet-method/index.html">kondorcet.CondorcetMethod</a></td>
+<a href="../kondorcet/-checked-poll/index.html">kondorcet.CheckedPoll</a></td>
+<td>
+<p>An implementation of <a href="../kondorcet/-poll/index.html">Poll</a> that check that ballots does not have duplicate before to take it</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../kondorcet.method/-condorcet-method/index.html">kondorcet.method.CondorcetMethod</a></td>
 <td>
 <p>Standard condorcet method poll. It does not ensure to get a single winner, but if it does this guaranteed to be a condorcet winner.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../kondorcet/kraft.-directed-graph/index.html">kraft.DirectedGraph</a> (extensions in package kondorcet)</td>
+<a href="../kondorcet/-default-ballot/index.html">kondorcet.DefaultBallot</a></td>
 <td>
+<p>Vote ballot</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../kondorcet/kraft.-directed-weighted-pseudo-graph/index.html">kraft.DirectedWeightedPseudoGraph</a> (extensions in package kondorcet)</td>
+<a href="../kondorcet.method/-graph-based-method/index.html">kondorcet.method.GraphBasedMethod</a></td>
 <td>
+<p>Abstraction of <a href="../kondorcet/-vote-method/index.html">VoteMethod</a> that are based on graphs</p>
 </td>
 </tr>
 <tr>
 <td>
 <a href="../kondorcet/-poll/index.html">kondorcet.Poll</a></td>
 <td>
-<p>A poll receive ballots and provide a result</p>
+<p>A poll receive ballots and provide a resultOf</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../kondorcet/-schulze-method/index.html">kondorcet.SchulzeMethod</a></td>
+<a href="../kondorcet.method/-relative-majority-method/index.html">kondorcet.method.RelativeMajorityMethod</a></td>
+<td>
+<p>The relative majority count the winners of each ballots and dont care about the others.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../kondorcet.method/-schulze-method/index.html">kondorcet.method.SchulzeMethod</a></td>
 <td>
 <p>Schulze method poll. It ensure to get a single winner and this winner will be a condorcet winner if possible.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../kondorcet/-simple-poll/index.html">kondorcet.SimplePoll</a></td>
+<td>
+<p>An implementation of <a href="../kondorcet/-poll/index.html">Poll</a> that does not do anything more than store ballots</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../kondorcet/-vote-method/index.html">kondorcet.VoteMethod</a></td>
+<td>
+<p>Represent a an algorithm used to compute the winners and losers from a set of ballots.</p>
 </td>
 </tr>
 </tbody>
