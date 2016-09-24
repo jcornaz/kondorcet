@@ -1,5 +1,5 @@
 #Change log
-## 1.0-SNAPSHOT
+## 1.0-rc2
 ### Added
 * `winners` and `winner` properties to `Ballot`
 * Polls
