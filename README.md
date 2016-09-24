@@ -22,11 +22,11 @@ poll.vote(Ballot.of('C', 'B', 'A', 'D', 'E'), 2)
 poll.vote(Ballot.of('D', 'C', 'E', 'B', 'A'), 7)
 poll.vote(Ballot.of('E', 'B', 'A', 'D', 'C'), 8)
 
-// Compute an return the result
+// Compute and return the result
 // The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
-val result: List<Set<Char>> = poll.result()
+val result = poll.result()
 
-println(result) // will print "[[E], [A], [C], [B], [D]]" (E is the winner)
+println(result.orderedCandidates) // will print "[[E], [A], [C], [B], [D]]" (E is the winner)
 ```
 
 Depending on the given ballots and the used method, there can be ex aequo between the candidates.
