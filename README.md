@@ -6,7 +6,7 @@
 This is a library to make a vote using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
 
 ## Usage exemple
-### From kotlin
+### From Kotlin
 ```kotlin
 // Create a poll that will be solved using the Schulze method 
 // See https://en.wikipedia.org/wiki/Schulze_method
@@ -24,7 +24,7 @@ poll.vote(Ballot.of('C', 'A', 'B', 'E', 'D'), 3)
 val result = poll.result()
 ```
 
-### From java
+### From Java
 ```java
 // Create a poll that will be solved using the Schulze method 
 // See https://en.wikipedia.org/wiki/Schulze_method
