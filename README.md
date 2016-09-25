@@ -3,7 +3,7 @@
 [![Code covertage](https://codecov.io/gh/slimaku/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/slimaku/kondorcet)
 [![JitPack](https://jitpack.io/v/slimaku/kondorcet.svg)](https://jitpack.io/#slimaku/kondorcet)
 
-This is a Kotlin library to manipulate vote polls using the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method)
+Kotlin library for [voting systems](https://en.wikipedia.org/wiki/Voting_system), with a strong accent on the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method) and it's derivatives.
 
 ## Usage exemple
 ```kotlin
@@ -34,9 +34,9 @@ Depending on the given ballots and the used method, there can be status quo betw
 In such case `poll.result()` would return something like `[[A, B], [C]]` which would mean : A and B are ex aequo, but both win agains C.
 
 ### Currently supported methods
-* Schulze
-* Condorcet
-* Relative majority
+* [Schulze](https://en.wikipedia.org/wiki/Schulze_method)
+* [Condorcet](https://en.wikipedia.org/wiki/Condorcet_method)
+* [Relative majority](https://en.wikipedia.org/wiki/Plurality_(voting)#Majority_versus_plurality)
 
 ## Add the library to your project
 You have to use java 6 or newer
