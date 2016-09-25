@@ -23,7 +23,7 @@ poll.vote(ballot('E', 'B', 'A', 'D', 'C'), 8)
 
 // Compute and return the result
 // The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
-val schulze = poll.result() // Use the Schulze method my default
+val schulze = poll.result() // Use the Schulze method by default
 
 // Eventualy get the result of other voting methods
 val condorcet = poll.result(CondorcetMethod)
