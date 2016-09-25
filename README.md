@@ -12,22 +12,18 @@ val poll = CheckedPoll<Char>()
 
 // Add ballots to the poll
 // Theses ballot contains the candidates ordered by prefernces
-poll.vote(ballot('A', 'C', 'B', 'E', 'D'), 5)
-poll.vote(ballot('A', 'D', 'E', 'C', 'B'), 5)
-poll.vote(ballot('B', 'E', 'D', 'A', 'C'), 8)
-poll.vote(ballot('C', 'A', 'B', 'E', 'D'), 3)
-poll.vote(ballot('C', 'A', 'E', 'B', 'D'), 7)
-poll.vote(ballot('C', 'B', 'A', 'D', 'E'), 2)
-poll.vote(ballot('D', 'C', 'E', 'B', 'A'), 7)
-poll.vote(ballot('E', 'B', 'A', 'D', 'C'), 8)
+poll.vote(ballot('A', 'C', 'B'), 23)
+poll.vote(ballot('B', 'C', 'A'), 19)
+poll.vote(ballot('C', 'B', 'A'), 16)
+poll.vote(ballot('C', 'A', 'B'), 2)
 
 // Compute and return the result
 // The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
-val schulze = poll.result() // Use the Schulze method by default
+val schulze = poll.result() // [[C], [B], [A]] (Use the Schulze method by default)
 
 // Eventualy get the result of other voting methods
-val condorcet = poll.result(CondorcetMethod)
-val relativeMajority = poll.result(RelativeMajority)
+val condorcet = poll.result(CondorcetMethod)            // [[C], [B], [A]] (identical of the shulze method in this case)
+val relativeMajority = poll.result(RelativeMajority)    // [[A], [B], [C]]
 ```
 
 Depending on the given ballots and the used method, there can be status quo between some candidates.
