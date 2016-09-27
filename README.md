@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/slimaku/kondorcet.svg?branch=master)](https://travis-ci.org/slimaku/kondorcet)
 [![Code covertage](https://codecov.io/gh/slimaku/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/slimaku/kondorcet)
 [![JitPack](https://jitpack.io/v/slimaku/kondorcet.svg)](https://jitpack.io/#slimaku/kondorcet)
+[![GPLv3](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://raw.githubusercontent.com/slimaku/kondorcet/master/LICENSE)
 
 Kotlin library for [voting systems](https://en.wikipedia.org/wiki/Voting_system), with a strong accent on the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method) and it's derivatives.
 
