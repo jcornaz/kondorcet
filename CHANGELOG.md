@@ -1,11 +1,11 @@
 #Change log
 ## 1.0-rc2
 ### Added
-* `winners` and `winner` properties to `Ballot`
+* Winner(s) properties to the `Ballot` interface
 * Polls
     * `SimplePoll` simply store ballots
     * `CheckedPoll` check the validity of the ballots
-* The `RelativeMajorityMethod` where the winner is the one who is the winner with the more ballots
+* Relative majority method
 
 ### Changed
 * The `Ballot` is now an interface and a `DefaultBallot` class has been added
