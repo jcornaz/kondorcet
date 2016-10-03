@@ -1,4 +1,8 @@
 #Change log
+## 1.0-SNAPSHOT
+### Added
+* The extension function `Ballot.with` create an copy of the ballot wich contains all given candidates.
+
 ## 1.0-rc2
 ### Added
 * Winner(s) properties to the `Ballot` interface

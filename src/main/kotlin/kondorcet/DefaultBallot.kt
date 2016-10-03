@@ -28,3 +28,9 @@ operator fun <T : Any> Ballot<T>.plus(candidates: Collection<T>): Ballot<T> =
         else DefaultBallot(orderedCandidates.plus<Set<T>>(candidates.toSet()))
 
 operator fun <T : Any> Ballot<T>.plus(candidate: T): Ballot<T> = plus(setOf(candidate))
+
+infix fun <T : Any> Ballot<T>.with(candidates: Collection<T>) =
+        candidates().let { c -> candidates.filterNot { it in c } }.let {
+            if (it.isEmpty()) this
+            else this + it
+        }
