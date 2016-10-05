@@ -3,6 +3,7 @@
 [![JitPack](https://jitpack.io/v/slimaku/kondorcet.svg)](https://jitpack.io/#slimaku/kondorcet)
 [![Build Status](https://travis-ci.org/slimaku/kondorcet.svg?branch=master)](https://travis-ci.org/slimaku/kondorcet)
 [![Code covertage](https://codecov.io/gh/slimaku/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/slimaku/kondorcet)
+[![Codebeat](https://codebeat.co/badges/421770ad-085c-480e-97eb-b46b30234a5e)](https://codebeat.co/projects/github-com-slimaku-kondorcet)
 [![Issues](https://img.shields.io/github/issues/slimaku/kondorcet.svg)](https://github.com/slimaku/kondorcet/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/slimaku/kondorcet.svg)](https://github.com/slimaku/kondorcet/pulls)
 
