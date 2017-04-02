@@ -5,6 +5,9 @@ import kable.emptyTable
 import kable.minusColumn
 import kable.minusRow
 
+/**
+ * Simple implementation of a [Graph]
+ */
 class SimpleGraph<V : Any, out W : Any>(
         override val vertices: Set<V> = emptySet(),
         edges: Table<V, V, W> = emptyTable()

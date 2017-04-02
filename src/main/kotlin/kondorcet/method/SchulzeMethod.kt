@@ -18,6 +18,9 @@ object SchulzeMethod : GraphBasedMethod() {
     override fun <T : Any> ballotOf(graph: Graph<T, Int>) =
             CondorcetMethod.ballotOf(graph.widestPath().simplify())
 
+    /**
+     * Returns the widest paths of the graph with the Floyd Warshall Algorithm
+     */
     fun <T : Any> Graph<T, Int>.widestPath(): Graph<T, Int> {
         var result: Graph<T, Int> = SimpleGraph(vertices)
 

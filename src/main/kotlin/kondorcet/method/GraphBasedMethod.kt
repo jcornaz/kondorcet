@@ -40,6 +40,13 @@ abstract class GraphBasedMethod : VoteMethod {
         return result
     }
 
+    /**
+     * Returns a simplified version of the graph, without edg twins.
+     *
+     * In case of twin the two edges are replaced by one edge representing the difference, and pointing in the positive direction.
+     *
+     * In case of equality of the twins, the edges are simply removed.
+     */
     fun <T : Any> Graph<T, Int>.simplify(): Graph<T, Int> =
             edges
                     .mapValues { (source, target, weight) -> weight - this[target, source].orZero() }
