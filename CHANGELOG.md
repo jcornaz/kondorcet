@@ -3,6 +3,9 @@
 ### Added
 * The extension function `Ballot.with` create an copy of the ballot wich contains all given candidates.
 
+### Changed
+* Dependency to the library "kraft" (graph utilities) has been removed and replaced by a simple implementation of a graph
+
 ## 1.0-rc2
 ### Added
 * Winner(s) properties to the `Ballot` interface

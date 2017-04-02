@@ -39,7 +39,7 @@ In such case `poll.result()` would return something like `[[A, B], [C]]` which w
 * [Relative majority](https://en.wikipedia.org/wiki/Plurality_(voting)#Majority_versus_plurality)
 
 ## Add the library to your project
-You have to use java 6 or newer
+You have to use java 8 or newer
 
 With [Gradle](https://gradle.org) :
 ```gradle

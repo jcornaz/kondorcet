@@ -1,7 +1,6 @@
 package kondorcet
 
-import kondorcet.method.CondorcetMethod
-import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class CheckedPollTest {
@@ -14,11 +13,14 @@ class CheckedPollTest {
         poll.vote(ballot('B', 'C', 'A'), 19)
         poll.vote(ballot('C', 'B', 'A'), 16)
         poll.vote(ballot('C', 'A', 'B'), 2)
+        poll.vote(ballot('C', 'A', 'B'), 3)
 
-        val expected = ballot('C', 'B', 'A')
-        val actual = poll.result(CondorcetMethod)
-
-        Assert.assertEquals(expected, actual)
+        assertEquals(mapOf(
+                ballot('A', 'C', 'B') to 23,
+                ballot('B', 'C', 'A') to 19,
+                ballot('C', 'B', 'A') to 16,
+                ballot('C', 'A', 'B') to 5
+        ), poll.ballots)
     }
 
     @Test(expected = IllegalArgumentException::class)

@@ -18,6 +18,7 @@ data class DefaultBallot<out T : Any>(override val orderedCandidates: List<Set<T
 
 fun <T : Any> ballot(vararg candidates: T): Ballot<T> = DefaultBallot.of(*candidates)
 fun <T : Any> ballot(vararg candidates: Collection<T>): Ballot<T> = DefaultBallot.of(*candidates)
+fun <T : Any> ballot(candidates: List<Set<T>>): Ballot<T> = DefaultBallot(candidates)
 fun <T : Any> emptyBallot(): Ballot<T> = DefaultBallot.blank<T>()
 
 operator fun <T : Any> Ballot<T>.plus(ballot: Ballot<T>): Ballot<T> =
@@ -30,7 +31,7 @@ operator fun <T : Any> Ballot<T>.plus(candidates: Collection<T>): Ballot<T> =
 operator fun <T : Any> Ballot<T>.plus(candidate: T): Ballot<T> = plus(setOf(candidate))
 
 infix fun <T : Any> Ballot<T>.with(candidates: Collection<T>) =
-        candidates().let { c -> candidates.filterNot { it in c } }.let {
+        this.candidates.let { c -> candidates.filterNot { it in c } }.let {
             if (it.isEmpty()) this
             else this + it
         }
