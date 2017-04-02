@@ -6,7 +6,7 @@ import kondorcet.Ballot
 import kondorcet.Poll
 import kondorcet.VoteMethod
 import kondorcet.graph.*
-import kondorcet.orZero
+import kondorcet.utils.orZero
 
 /**
  * Abstraction of [VoteMethod] that are based on graphs

@@ -1,10 +1,10 @@
 package kondorcet.method
 
 import kondorcet.graph.*
-import kondorcet.max
+import kondorcet.utils.max
 import kondorcet.method.SchulzeMethod.resultOf
-import kondorcet.min
-import kondorcet.orZero
+import kondorcet.utils.min
+import kondorcet.utils.orZero
 
 /**
  * Schulze method poll. It ensure to get a single winner and this winner will be a condorcet winner if possible.
