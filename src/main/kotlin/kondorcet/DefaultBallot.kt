@@ -31,7 +31,7 @@ operator fun <T : Any> Ballot<T>.plus(candidates: Collection<T>): Ballot<T> =
 operator fun <T : Any> Ballot<T>.plus(candidate: T): Ballot<T> = plus(setOf(candidate))
 
 infix fun <T : Any> Ballot<T>.with(candidates: Collection<T>) =
-        candidates().let { c -> candidates.filterNot { it in c } }.let {
+        this.candidates.let { c -> candidates.filterNot { it in c } }.let {
             if (it.isEmpty()) this
             else this + it
         }

@@ -1,6 +1,6 @@
 package kondorcet.method
 
-import kable.*
+import kondorcet.graph.*
 import kondorcet.max
 import kondorcet.method.SchulzeMethod.resultOf
 import kondorcet.min
@@ -15,44 +15,42 @@ import kondorcet.orZero
  */
 object SchulzeMethod : GraphBasedMethod() {
 
-    override fun <T : Any> victoriesTableOf(graph: Table<T, T, Int>): Table<T, T, Boolean> =
-            CondorcetMethod.victoriesTableOf(graph.widestPath())
+    override fun <T : Any> ballotOf(graph: Graph<T, Int>) =
+            CondorcetMethod.ballotOf(graph.widestPath().simplify())
 
-    fun <T : Any> Table<T, T, Int>.widestPath(): Table<T, T, Int> {
-        var result = emptyTable<T, T, Int>()
+    fun <T : Any> Graph<T, Int>.widestPath(): Graph<T, Int> {
+        var result: Graph<T, Int> = SimpleGraph(vertices)
 
-        for ((source, target, weight) in this) {
+        for ((source, target, weight) in edges) {
             val i = source
             val j = target
 
             if (i != j) {
                 val ij = weight
-                val ji = this[j, i].orZero()
+                val ji = result[j, i].orZero()
 
                 if (ij > ji)
-                    result += entry(i, j, ij)
+                    result += Edge(i, j, ij)
                 else
                     result -= i to j
             }
         }
 
-        val vertices = rows + columns
         for (i in vertices) {
-            for (j in vertices) {
-                if (i != j) {
-                    for (k in vertices) {
-                        if (i != k && j != k) {
-                            result += entry(j, k,
-                                    max(
-                                            result[j, k].orZero(),
-                                            min(
-                                                    result[j, i].orZero(),
-                                                    result[i, k].orZero()
-                                            )
-                                    )
+            for (j in (vertices - i)) {
+                for (k in (vertices - i - j)) {
+                    val weight = max(
+                            result[j, k].orZero(),
+                            min(
+                                    result[j, i].orZero(),
+                                    result[i, k].orZero()
                             )
-                        }
-                    }
+                    )
+
+                    if (weight > 0)
+                        result += Edge(j, k, weight)
+                    else
+                        result -= j to k
                 }
             }
         }
