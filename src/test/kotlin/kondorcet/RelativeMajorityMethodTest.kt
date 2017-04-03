@@ -1,6 +1,7 @@
 package kondorcet
 
 import kondorcet.method.RelativeMajorityMethod
+import kondorcet.poll.SimplePoll
 import org.junit.Assert
 import org.junit.Test
 

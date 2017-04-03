@@ -1,5 +1,6 @@
 package kondorcet
 
+import kondorcet.poll.CheckedPoll
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

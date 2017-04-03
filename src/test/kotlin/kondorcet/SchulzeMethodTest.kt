@@ -1,6 +1,7 @@
 package kondorcet
 
 import kondorcet.method.SchulzeMethod
+import kondorcet.poll.SimplePoll
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

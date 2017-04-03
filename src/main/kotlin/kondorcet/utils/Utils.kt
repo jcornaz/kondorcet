@@ -1,3 +1,5 @@
+@file:JvmName("Utils")
+
 package kondorcet.utils
 
 /** Returns the value or 0, if null */

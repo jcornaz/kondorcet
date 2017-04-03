@@ -1,5 +1,7 @@
-package kondorcet
+package kondorcet.poll
 
+import kondorcet.Ballot
+import kondorcet.Poll
 import java.util.*
 
 /**

@@ -18,13 +18,13 @@ object RelativeMajorityMethod : VoteMethod {
 
         println(list)
 
-        var result = emptyBallot<T>()
+        var result = emptyList<Set<T>>()
         var candidates = emptySet<T>()
         var currentScore: Int? = null
         for ((candidate, score) in list) {
 
             if (score != currentScore) {
-                result += candidates
+                result += listOf(candidates)
                 candidates = emptySet()
                 currentScore = score
             }
@@ -32,8 +32,8 @@ object RelativeMajorityMethod : VoteMethod {
             candidates += candidate
         }
 
-        result += candidates
+        result += listOf(candidates)
 
-        return result
+        return ballot(result)
     }
 }
