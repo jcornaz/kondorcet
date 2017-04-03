@@ -4,13 +4,24 @@
 * The extension function `Ballot.with` create an copy of the ballot which contains all given candidates.
 
 ### Changed
-* Dependency to the library "kraft" (graph utilities) has been removed and replaced by a simple implementation of a graph
-* Poll is now immutable
-* Polls and Ballots implementation moved to the package "model"
-* Ballot cannot be invalid anymore
+* [API-BREAK] Poll is now immutable
+* [API-BREAK] Polls and Ballots implementation moved to the package "model"
+* [API-BREAK] Ballot cannot be invalid anymore
 
 ### Removed
-* CheckedPoll has been removed because no longer necessary due to changes of poll and ballots (see above)
+* [API-BREAK] CheckedPoll has been removed because no longer necessary due to changes of poll and ballots (see above)
+
+### Dependencies changes
+#### Added
+* [Kable](https://github.com/slimaku/kable) 1.1.0
+
+#### Updated
+* [Kotlin](https://kotlinlang.org/) from 1.0.4 to 1.1.1
+* [Dokka](https://github.com/Kotlin/dokka) from 0.9.9 to 0.9.13
+* [gradle-git](https://github.com/ajoberstar/gradle-git) from 1.5.1 to 1.7.0
+
+#### Removed
+* [Kraft](https://github.com/slimaku/kraft) 0.1.2
 
 ## 1.0-rc2
 ### Added
@@ -21,12 +32,12 @@
 * Relative majority method
 
 ### Changed
-* The `Ballot` is now an interface and a `DefaultBallot` class has been added
-* Ballots are now created by function call : `ballot(c1, c2, c3, c4)` or `ballot(setOf(c1, c2), setOf(c3, c4)`
-* The `VoteMethod` has been created to separate it from the poll. It can be specified when calling `Poll.result`
+* [API-BREAK] The `Ballot` is now an interface and a `DefaultBallot` class has been added
+* [API-BREAK] Ballots are now created by function call : `ballot(c1, c2, c3, c4)` or `ballot(setOf(c1, c2), setOf(c3, c4)`
+* [API-BREAK] The `VoteMethod` has been created to separate it from the poll. It can be specified when calling `Poll.getResult`
 
 ## Fixed
-* The method `Ballot.hasDuplicates` result was the inversed
+* The method `Ballot.hasDuplicates` getResult was the inversed
 
 ## 1.0-rc1
 ### Added
