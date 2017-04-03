@@ -1,10 +1,16 @@
 #Change log
 ## 1.0-SNAPSHOT
 ### Added
-* The extension function `Ballot.with` create an copy of the ballot wich contains all given candidates.
+* The extension function `Ballot.with` create an copy of the ballot which contains all given candidates.
 
 ### Changed
 * Dependency to the library "kraft" (graph utilities) has been removed and replaced by a simple implementation of a graph
+* Poll is now immutable
+* Polls and Ballots implementation moved to the package "model"
+* Ballot cannot be invalid anymore
+
+### Removed
+* CheckedPoll has been removed because no longer necessary due to changes of poll and ballots (see above)
 
 ## 1.0-rc2
 ### Added

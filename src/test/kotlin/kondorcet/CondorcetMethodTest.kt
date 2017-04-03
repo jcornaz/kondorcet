@@ -1,7 +1,7 @@
 package kondorcet
 
 import kondorcet.method.CondorcetMethod
-import kondorcet.poll.SimplePoll
+import kondorcet.model.*
 import org.junit.Assert
 import org.junit.Test
 
@@ -16,16 +16,16 @@ class CondorcetMethodTest : CondorcetProofMethodTest() {
      */
     @Test
     fun testParadoxSolving() {
-        val poll = SimplePoll<Char>()
-
-        poll.vote(ballot('A', 'C', 'B', 'E', 'D'), 5)
-        poll.vote(ballot('A', 'D', 'E', 'C', 'B'), 5)
-        poll.vote(ballot('B', 'E', 'D', 'A', 'C'), 8)
-        poll.vote(ballot('C', 'A', 'B', 'E', 'D'), 3)
-        poll.vote(ballot('C', 'A', 'E', 'B', 'D'), 7)
-        poll.vote(ballot('C', 'B', 'A', 'D', 'E'), 2)
-        poll.vote(ballot('D', 'C', 'E', 'B', 'A'), 7)
-        poll.vote(ballot('E', 'B', 'A', 'D', 'C'), 8)
+        val poll = pollOf(
+                ballot('A', 'C', 'B', 'E', 'D') to 5,
+                ballot('A', 'D', 'E', 'C', 'B') to 5,
+                ballot('B', 'E', 'D', 'A', 'C') to 8,
+                ballot('C', 'A', 'B', 'E', 'D') to 3,
+                ballot('C', 'A', 'E', 'B', 'D') to 7,
+                ballot('C', 'B', 'A', 'D', 'E') to 2,
+                ballot('D', 'C', 'E', 'B', 'A') to 7,
+                ballot('E', 'B', 'A', 'D', 'C') to 8
+        )
 
         val expected = ballot(setOf('E', 'A', 'C', 'B', 'D'))
         val actual = poll.result(CondorcetMethod)
@@ -33,16 +33,5 @@ class CondorcetMethodTest : CondorcetProofMethodTest() {
         Assert.assertEquals(expected, actual)
     }
 
-    @Test
-    fun testExAequoOnTheMiddle() {
-        val poll = SimplePoll<Char>()
 
-        poll.vote(ballot('A', 'B', 'C', 'D'))
-        poll.vote(ballot('A', 'C', 'B', 'D'))
-
-        val expected = ballot(setOf('A'), setOf('B', 'C'), setOf('D'))
-        val actual = poll.result(CondorcetMethod)
-
-        Assert.assertEquals(expected, actual)
-    }
 }

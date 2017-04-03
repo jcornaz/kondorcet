@@ -1,7 +1,7 @@
 package kondorcet.method
 
 import kondorcet.Ballot
-import kondorcet.ballot
+import kondorcet.model.ballot
 import kondorcet.graph.Graph
 import kondorcet.graph.minus
 import kondorcet.method.CondorcetMethod.resultOf
