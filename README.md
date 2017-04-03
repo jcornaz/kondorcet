@@ -56,5 +56,7 @@ dependencies {
 You can also use [Jitpack](https://jitpack.io/#slimaku/kraft) with maven, sbt or leiningen.
 
 ## Documentation
-* [Base API](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet/index.html)
-* [Vote methods](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet.method/index.html)
+* [Packages](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/)
+* [Base API](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet/)
+* [Polls](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet.poll/)
+* [Vote methods](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet.method/)

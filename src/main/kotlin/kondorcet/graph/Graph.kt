@@ -8,7 +8,7 @@ import kable.Table
  * @param V Type of vertices
  * @param W Type of weights
  */
-interface Graph<V : Any, out W : Any> {
+internal interface Graph<V : Any, out W : Any> {
 
     /** Vertices of the graph */
     val vertices: Set<V>

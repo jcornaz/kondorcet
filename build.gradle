@@ -49,6 +49,10 @@ jacocoTestReport {
     }
 }
 
+dokka {
+    includes = ['Packages.md']
+}
+
 task sourcesJar(type: Jar) {
     from sourceSets.main.kotlin.srcDirs
     classifier = 'sources'
