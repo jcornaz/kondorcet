@@ -11,22 +11,22 @@ Kotlin library for [voting systems](https://en.wikipedia.org/wiki/Voting_system)
 
 ## Usage exemple
 ```kotlin
-// Create a poll that ensure the validity of the ballots
+// Create a poll (this one ensure the validity of the ballots)
 val poll = CheckedPoll<Char>()
 
 // Add ballots to the poll
-// Theses ballot contains the candidates ordered by prefernces
+// Theses ballot contains the candidates ordered by preferences
 poll.vote(ballot('A', 'C', 'B'), 23)
 poll.vote(ballot('B', 'C', 'A'), 19)
 poll.vote(ballot('C', 'B', 'A'), 16)
 poll.vote(ballot('C', 'A', 'B'), 2)
 
 // Compute and return the result
-// The result is an instance of Ballot wich contains the candidates ordered from the winners to the losers
+// The result is an instance of Ballot which contains the candidates ordered from the winners to the losers
 val schulze = poll.result() // [[C], [B], [A]] (Use the Schulze method by default)
 
 // Eventualy get the result of other voting methods
-val condorcet = poll.result(CondorcetMethod)            // [[C], [B], [A]] (identical of the shulze method in this case)
+val condorcet = poll.result(CondorcetMethod)            // [[C], [B], [A]] (identical of the Schulze method in this case)
 val relativeMajority = poll.result(RelativeMajority)    // [[A], [B], [C]]
 ```
 
