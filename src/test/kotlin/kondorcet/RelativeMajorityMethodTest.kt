@@ -1,7 +1,9 @@
 package kondorcet
 
 import kondorcet.method.RelativeMajorityMethod
-import kondorcet.poll.SimplePoll
+import kondorcet.model.ballot
+import kondorcet.model.pollOf
+import kondorcet.model.result
 import org.junit.Assert
 import org.junit.Test
 
@@ -9,12 +11,12 @@ class RelativeMajorityMethodTest {
 
     @Test
     fun testStandardCase() {
-        val poll = SimplePoll<Char>()
-
-        poll.vote(ballot('A', 'C', 'B'), 23)
-        poll.vote(ballot('B', 'C', 'A'), 19)
-        poll.vote(ballot('C', 'B', 'A'), 16)
-        poll.vote(ballot('C', 'A', 'B'), 2)
+        val poll = pollOf(
+                ballot('A', 'C', 'B') to 23,
+                ballot('B', 'C', 'A') to 19,
+                ballot('C', 'B', 'A') to 16,
+                ballot('C', 'A', 'B') to 2
+        )
 
         val expected = ballot('A', 'B', 'C')
         val actual = poll.result(RelativeMajorityMethod)

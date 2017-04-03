@@ -1,20 +1,14 @@
 package kondorcet
 
 /**
- * A poll receive ballots and provide a resultOf
+ * A poll is a collection of ballots with the quantity of voter for each one
  */
 interface Poll<T : Any> {
 
-    /**
-     * Set of ballots in the poll
-     */
+    /** Map of vote count by ballots */
     val ballots: Map<Ballot<T>, Int>
 
-    /**
-     * Add a ballot to the pool
-     *
-     * @param ballot Ballot to add
-     * @param count How many of the the ballot should be counted
-     */
-    fun vote(ballot: Ballot<T>, count: Int = 1)
+    /** Candidates */
+    val candidates: Set<T>
+        get() = ballots.keys.fold(emptySet<T>()) { set, ballot -> set + ballot.candidates }
 }

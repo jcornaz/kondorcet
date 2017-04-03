@@ -1,6 +1,7 @@
 package kondorcet
 
-import kondorcet.poll.SimplePoll
+import kondorcet.method.CondorcetMethod
+import kondorcet.model.*
 import org.junit.Assert
 import org.junit.Test
 
@@ -10,12 +11,12 @@ abstract class CondorcetProofMethodTest {
 
     @Test
     fun testCondorcetWinner() {
-        val poll = SimplePoll<Char>()
-
-        poll.vote(ballot('A', 'C', 'B'), 23)
-        poll.vote(ballot('B', 'C', 'A'), 19)
-        poll.vote(ballot('C', 'B', 'A'), 16)
-        poll.vote(ballot('C', 'A', 'B'), 2)
+        val poll = pollOf(
+                ballot('A', 'C', 'B') to 23,
+                ballot('B', 'C', 'A') to 19,
+                ballot('C', 'B', 'A') to 16,
+                ballot('C', 'A', 'B') to 2
+        )
 
         val expected = ballot('C', 'B', 'A')
         val actual = poll.result(method)
@@ -25,15 +26,29 @@ abstract class CondorcetProofMethodTest {
 
     @Test
     fun testExAequoBetweenCandidates() {
-        val poll = SimplePoll<Char>()
 
         // A > B && B > C && A == C
-        poll.vote(ballot('A', 'B', 'C'), 5)
-        poll.vote(ballot('C', 'A', 'B'), 3)
-        poll.vote(ballot('B', 'C', 'A'), 2)
+        val poll = pollOf(
+                ballot('A', 'B', 'C') to 5,
+                ballot('C', 'A', 'B') to 3,
+                ballot('B', 'C', 'A') to 2
+        )
 
         val expected = ballot('A', 'B', 'C')
         val actual = poll.result(method)
+
+        Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun testExAequoOnTheMiddle() {
+        var poll = emptyPoll<Char>()
+
+        poll += ballot('A', 'B', 'C', 'D')
+        poll += ballot('A', 'C', 'B', 'D')
+
+        val expected = ballot(setOf('A'), setOf('B', 'C'), setOf('D'))
+        val actual = poll.result(CondorcetMethod)
 
         Assert.assertEquals(expected, actual)
     }

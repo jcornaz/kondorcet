@@ -1,6 +1,7 @@
 package kondorcet.method
 
 import kondorcet.*
+import kondorcet.model.ballot
 import java.util.*
 
 /**

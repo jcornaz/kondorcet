@@ -1,6 +1,8 @@
 @file:JvmName("Ballots")
 
-package kondorcet
+package kondorcet.model
+
+import kondorcet.Ballot
 
 
 /** Create a new ballot with the specified ordered candidates */

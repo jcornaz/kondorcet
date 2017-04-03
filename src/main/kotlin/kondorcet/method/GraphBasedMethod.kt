@@ -14,7 +14,7 @@ import kondorcet.utils.orZero
 abstract class GraphBasedMethod : VoteMethod {
 
     override fun <T : Any> resultOf(poll: Poll<T>): Ballot<T> {
-        var graph = emptyGraph<T, Int>()
+        var graph: Graph<T, Int> = SimpleGraph(poll.candidates)
 
         for (ballot in poll.ballots)
             graph += ballot.toPair()
@@ -24,7 +24,7 @@ abstract class GraphBasedMethod : VoteMethod {
 
     internal operator fun <T : Any> Graph<T, Int>.plus(ballots: Pair<Ballot<T>, Int>): Graph<T, Int> {
         val (ballot, count) = ballots
-        var result = this + ballot.candidates
+        var result = this
         var losers = ballot.orderedCandidates
 
         while (losers.isNotEmpty()) {
