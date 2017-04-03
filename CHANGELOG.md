@@ -18,8 +18,6 @@
 
 #### Updated
 * [Kotlin](https://kotlinlang.org/) from 1.0.4 to 1.1.1
-* [Dokka](https://github.com/Kotlin/dokka) from 0.9.9 to 0.9.13
-* [gradle-git](https://github.com/ajoberstar/gradle-git) from 1.5.1 to 1.7.0
 
 #### Removed
 * [Kraft](https://github.com/slimaku/kraft) 0.1.2
