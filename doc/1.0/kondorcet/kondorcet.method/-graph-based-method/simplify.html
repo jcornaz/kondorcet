@@ -1,5 +1,6 @@
 <HTML>
 <HEAD>
+<meta charset="UTF-8">
 <title>GraphBasedMethod.simplify - kondorcet</title>
 <link rel="stylesheet" href="..\..\..\style.css">
 </HEAD>
@@ -7,10 +8,10 @@
 <a href="../../index.html">kondorcet</a>&nbsp;/&nbsp;<a href="../index.html">kondorcet.method</a>&nbsp;/&nbsp;<a href="index.html">GraphBasedMethod</a>&nbsp;/&nbsp;<a href=".">simplify</a><br/>
 <br/>
 <h1>simplify</h1>
-<a name="kondorcet.method.GraphBasedMethod$simplify(kraft.DirectedWeightedPseudoGraph((kondorcet.method.GraphBasedMethod.simplify.T, kotlin.Int)))"></a>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">DirectedWeightedPseudoGraph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">simplify</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Unit</span></code>
-<p>Simplify a graph.</p>
-<p>For each edge who ave a <emph>twin</emph> (an edge for the same vertices but in the opposite direction), it will
-remove the unnecessary edge and update the weight to represent the differences between the edges.</p>
+<a name="kondorcet.method.GraphBasedMethod$simplify(kondorcet.graph.Graph((kondorcet.method.GraphBasedMethod.simplify.T, kotlin.Int)))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <a href="../../kondorcet.graph/-graph/index.html"><span class="identifier">Graph</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">simplify</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../kondorcet.graph/-graph/index.html"><span class="identifier">Graph</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code>
+<p>Returns a simplified version of the graph, without edg twins.</p>
+<p>In case of twin the two edges are replaced by one edge representing the difference, and pointing in the positive direction.</p>
+<p>In case of equality of the twins, the edges are simply removed.</p>
 </BODY>
 </HTML>

@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Graph - kondorcet</title>
+<link rel="stylesheet" href="..\..\..\style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kondorcet</a>&nbsp;/&nbsp;<a href="../index.html">kondorcet.graph</a>&nbsp;/&nbsp;<a href=".">Graph</a><br/>
+<br/>
+<h1>Graph</h1>
+<code><span class="keyword">interface </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="keyword">out</span>&nbsp;<span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span></code>
+<p>Directed and weighted graph</p>
+<h3>Parameters</h3>
+
+<p><a name="V"></a>
+<code>V</code> - Type of vertices
+<p><a name="W"></a>
+<code>W</code> - Type of weights
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="edges.html">edges</a></td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">edges</span><span class="symbol">: </span><span class="identifier">Table</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Adjacency matrix</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="vertices.html">vertices</a></td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">vertices</span><span class="symbol">: </span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">&gt;</span></code>
+<p>Vertices of the graph</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="contains.html">contains</a></td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph.Graph$contains(kondorcet.graph.Graph.V)/vertex">vertex</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Boolean</span></code>
+<p>Returns true if, and only if, the graph contains the given <a href="contains.html#kondorcet.graph.Graph$contains(kondorcet.graph.Graph.V)/vertex">vertex</a></p>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph.Graph$contains(kotlin.Pair((kondorcet.graph.Graph.V, )))/edge">edge</span><span class="symbol">:</span>&nbsp;<span class="identifier">Pair</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Boolean</span></code>
+<p>Returns true if, and only if, the graphs contains the given <a href="contains.html#kondorcet.graph.Graph$contains(kotlin.Pair((kondorcet.graph.Graph.V, )))/edge">edge</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="get.html">get</a></td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph.Graph$get(kondorcet.graph.Graph.V, kondorcet.graph.Graph.V)/source">source</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">, </span><span class="identifier" id="kondorcet.graph.Graph$get(kondorcet.graph.Graph.V, kondorcet.graph.Graph.V)/target">target</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">W</span><span class="symbol">?</span></code>
+<p>Return the weight of the edge, or null if there is no such edge</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="get-degree-from.html">getDegreeFrom</a></td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDegreeFrom</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph.Graph$getDegreeFrom(kondorcet.graph.Graph.V)/source">source</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Int</span></code>
+<p>Returns the number of edges having the <a href="get-degree-from.html#kondorcet.graph.Graph$getDegreeFrom(kondorcet.graph.Graph.V)/source">source</a> vertex</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="get-degree-to.html">getDegreeTo</a></td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDegreeTo</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph.Graph$getDegreeTo(kondorcet.graph.Graph.V)/target">target</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Int</span></code>
+<p>Returns the number of edges having the <a href="get-degree-to.html#kondorcet.graph.Graph$getDegreeTo(kondorcet.graph.Graph.V)/target">target</a> vertex</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="get-edges-from.html">getEdgesFrom</a></td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEdgesFrom</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph.Graph$getEdgesFrom(kondorcet.graph.Graph.V)/source">source</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Map</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Returns the edges having the <a href="get-edges-from.html#kondorcet.graph.Graph$getEdgesFrom(kondorcet.graph.Graph.V)/source">source</a> vertex</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="get-edges-to.html">getEdgesTo</a></td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEdgesTo</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph.Graph$getEdgesTo(kondorcet.graph.Graph.V)/target">target</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Map</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Returns the edges having the <a href="get-edges-to.html#kondorcet.graph.Graph$getEdgesTo(kondorcet.graph.Graph.V)/target">target</a> vertex</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="../../kondorcet.method/-condorcet-method/extract-candidates.html">extractCandidates</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">extractCandidates</span><span class="symbol">(</span><span class="identifier" id="kondorcet.method.CondorcetMethod$extractCandidates(kondorcet.graph.Graph((kondorcet.method.CondorcetMethod.extractCandidates.T, kondorcet.method.CondorcetMethod.extractCandidates.W)), kotlin.collections.Collection((kondorcet.method.CondorcetMethod.extractCandidates.T)), kotlin.Function2((kondorcet.graph.Graph((kondorcet.method.CondorcetMethod.extractCandidates.T, kotlin.Any)), , kotlin.Boolean)), kotlin.Function2((kotlin.collections.List((kotlin.collections.Set((kondorcet.method.CondorcetMethod.extractCandidates.T)))), , )))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="kondorcet.method.CondorcetMethod$extractCandidates(kondorcet.graph.Graph((kondorcet.method.CondorcetMethod.extractCandidates.T, kondorcet.method.CondorcetMethod.extractCandidates.W)), kotlin.collections.Collection((kondorcet.method.CondorcetMethod.extractCandidates.T)), kotlin.Function2((kondorcet.graph.Graph((kondorcet.method.CondorcetMethod.extractCandidates.T, kotlin.Any)), , kotlin.Boolean)), kotlin.Function2((kotlin.collections.List((kotlin.collections.Set((kondorcet.method.CondorcetMethod.extractCandidates.T)))), , )))/selectCandidate">selectCandidate</span><span class="symbol">:</span>&nbsp;<span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="identifier">candidate</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">Boolean</span><span class="symbol">, </span><span class="identifier" id="kondorcet.method.CondorcetMethod$extractCandidates(kondorcet.graph.Graph((kondorcet.method.CondorcetMethod.extractCandidates.T, kondorcet.method.CondorcetMethod.extractCandidates.W)), kotlin.collections.Collection((kondorcet.method.CondorcetMethod.extractCandidates.T)), kotlin.Function2((kondorcet.graph.Graph((kondorcet.method.CondorcetMethod.extractCandidates.T, kotlin.Any)), , kotlin.Boolean)), kotlin.Function2((kotlin.collections.List((kotlin.collections.Set((kondorcet.method.CondorcetMethod.extractCandidates.T)))), , )))/merge">merge</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">List</span><span class="symbol">&lt;</span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">List</span><span class="symbol">&lt;</span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Pair</span><span class="symbol">&lt;</span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<span class="identifier">List</span><span class="symbol">&lt;</span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Extract candidates from the graph</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../minus.html">minus</a></td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">minus</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph$minus(kondorcet.graph.Graph((kondorcet.graph.minus.V, kondorcet.graph.minus.W)), kondorcet.graph.minus.V)/vertex">vertex</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Returns a new graphs without the given <a href="../minus.html#kondorcet.graph$minus(kondorcet.graph.Graph((kondorcet.graph.minus.V, kondorcet.graph.minus.W)), kondorcet.graph.minus.V)/vertex">vertex</a></p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">minus</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph$minus(kondorcet.graph.Graph((kondorcet.graph.minus.V, kondorcet.graph.minus.W)), kotlin.Pair((kondorcet.graph.minus.V, )))/edge">edge</span><span class="symbol">:</span>&nbsp;<span class="identifier">Pair</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Returns a new graphs without the given <a href="../minus.html#kondorcet.graph$minus(kondorcet.graph.Graph((kondorcet.graph.minus.V, kondorcet.graph.minus.W)), kotlin.Pair((kondorcet.graph.minus.V, )))/edge">edge</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../plus.html">plus</a></td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph$plus(kondorcet.graph.Graph((kondorcet.graph.plus.V, kondorcet.graph.plus.W)), kondorcet.graph.plus.V)/vertex">vertex</span><span class="symbol">:</span>&nbsp;<span class="identifier">V</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Returns a new graph with the <a href="../plus.html#kondorcet.graph$plus(kondorcet.graph.Graph((kondorcet.graph.plus.V, kondorcet.graph.plus.W)), kondorcet.graph.plus.V)/vertex">vertex</a> added</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph$plus(kondorcet.graph.Graph((kondorcet.graph.plus.V, kondorcet.graph.plus.W)), kotlin.collections.Collection((kondorcet.graph.plus.V)))/vertices">vertices</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Returns a new graph with the <a href="../plus.html#kondorcet.graph$plus(kondorcet.graph.Graph((kondorcet.graph.plus.V, kondorcet.graph.plus.W)), kotlin.collections.Collection((kondorcet.graph.plus.V)))/vertices">vertices</a> added</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet.graph$plus(kondorcet.graph.Graph((kondorcet.graph.plus.V, kondorcet.graph.plus.W)), kondorcet.graph.Edge((kondorcet.graph.plus.V, kondorcet.graph.plus.W)))/edge">edge</span><span class="symbol">:</span>&nbsp;<a href="../-edge/index.html"><span class="identifier">Edge</span></a><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Returns a new graph with the <a href="../plus.html#kondorcet.graph$plus(kondorcet.graph.Graph((kondorcet.graph.plus.V, kondorcet.graph.plus.W)), kondorcet.graph.Edge((kondorcet.graph.plus.V, kondorcet.graph.plus.W)))/edge">edge</a> added</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../kondorcet.method/-graph-based-method/plus.html">plus</a></td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet.method.GraphBasedMethod$plus(kondorcet.graph.Graph((kondorcet.method.GraphBasedMethod.plus.T, kotlin.Int)), kotlin.Pair((kondorcet.Ballot((kondorcet.method.GraphBasedMethod.plus.T)), kotlin.Int)))/ballots">ballots</span><span class="symbol">:</span>&nbsp;<span class="identifier">Pair</span><span class="symbol">&lt;</span><a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<a href="../../kondorcet.method/-graph-based-method/simplify.html">simplify</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">simplify</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code>
+<p>Returns a simplified version of the graph, without edg twins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../kondorcet.method/-condorcet-method/to-ballot.html">toBallot</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">toBallot</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Returns a ballots representing the graph (as a victory graph)</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../kondorcet.method/-schulze-method/widest-path.html">widestPath</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">widestPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code>
+<p>Returns the widest paths of the graph with the Floyd Warshall Algorithm</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="../-simple-graph/index.html">SimpleGraph</a></td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SimpleGraph</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">, </span><span class="keyword">out</span>&nbsp;<span class="identifier">W</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">,</span>&nbsp;<span class="identifier">W</span><span class="symbol">&gt;</span></code>
+<p>Simple implementation of a Graph</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,5 +1,6 @@
 <HTML>
 <HEAD>
+<meta charset="UTF-8">
 <title>Ballot - kondorcet</title>
 <link rel="stylesheet" href="..\..\..\style.css">
 </HEAD>
@@ -14,6 +15,14 @@
 <tbody>
 <tr>
 <td>
+<a href="candidates.html">candidates</a></td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">candidates</span><span class="symbol">: </span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Candidates</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="ordered-candidates.html">orderedCandidates</a></td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">orderedCandidates</span><span class="symbol">: </span><span class="identifier">List</span><span class="symbol">&lt;</span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
@@ -25,7 +34,7 @@
 <a href="winner.html">winner</a></td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">winner</span><span class="symbol">: </span><span class="identifier">T</span><span class="symbol">?</span></code>
-<p>Single winner (if ther is one)</p>
+<p>Single winner (if there is one)</p>
 </td>
 </tr>
 <tr>
@@ -43,14 +52,6 @@
 <tbody>
 <tr>
 <td>
-<a href="candidates.html">candidates</a></td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">candidates</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Set containing all the candidates</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="has-duplicates.html">hasDuplicates</a></td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasDuplicates</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Boolean</span></code>
@@ -64,11 +65,11 @@
 <tbody>
 <tr>
 <td>
-<a href="../plus.html">plus</a></td>
+<a href="../with.html">with</a></td>
 <td>
-<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet$plus(kondorcet.Ballot((kondorcet.plus.T)), kondorcet.Ballot((kondorcet.plus.T)))/ballot">ballot</span><span class="symbol">:</span>&nbsp;<span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
-<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet$plus(kondorcet.Ballot((kondorcet.plus.T)), kotlin.collections.Collection((kondorcet.plus.T)))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
-<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet$plus(kondorcet.Ballot((kondorcet.plus.T)), kondorcet.plus.T)/candidate">candidate</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">with</span><span class="symbol">(</span><span class="identifier" id="kondorcet$with(kondorcet.Ballot((kondorcet.with.T)), kotlin.collections.Collection((kondorcet.with.T)))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Create a ballot that have at least all the specified candidates</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +80,7 @@
 <td>
 <a href="../-default-ballot/index.html">DefaultBallot</a></td>
 <td>
-<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">DefaultBallot</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">class </span><span class="identifier">DefaultBallot</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Ballot</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
 <p>Vote ballot</p>
 </td>
 </tr>
