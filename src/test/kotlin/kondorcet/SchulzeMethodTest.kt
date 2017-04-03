@@ -1,26 +1,14 @@
 package kondorcet
 
+import kondorcet.method.CondorcetMethod
 import kondorcet.method.SchulzeMethod
 import kondorcet.poll.SimplePoll
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class SchulzeMethodTest {
+class SchulzeMethodTest : CondorcetProofMethodTest() {
 
-    @Test
-    fun testCondorcetWinner() {
-        val poll = SimplePoll<Char>()
-
-        poll.vote(ballot('A', 'C', 'B'), 23)
-        poll.vote(ballot('B', 'C', 'A'), 19)
-        poll.vote(ballot('C', 'B', 'A'), 16)
-        poll.vote(ballot('C', 'A', 'B'), 2)
-
-        val expected = ballot('C', 'B', 'A')
-        val actual = poll.result(SchulzeMethod)
-
-        assertEquals(expected, actual)
-    }
+    override val method = CondorcetMethod
 
     /**
      * Test the resultOf when there is condorcet paradox :
