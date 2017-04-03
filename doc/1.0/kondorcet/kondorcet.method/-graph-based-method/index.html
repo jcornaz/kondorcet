@@ -28,32 +28,10 @@
 <tbody>
 <tr>
 <td>
-<a href="ballot-of.html">ballotOf</a></td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">ballotOf</span><span class="symbol">(</span><span class="identifier" id="kondorcet.method.GraphBasedMethod$ballotOf(kondorcet.graph.Graph((kondorcet.method.GraphBasedMethod.ballotOf.T, kotlin.Int)))/graph">graph</span><span class="symbol">:</span>&nbsp;<span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Compute the result graph from the data graph</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="plus.html">plus</a></td>
-<td>
-<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="kondorcet.method.GraphBasedMethod$plus(kondorcet.graph.Graph((kondorcet.method.GraphBasedMethod.plus.T, kotlin.Int)), kotlin.Pair((kondorcet.Ballot((kondorcet.method.GraphBasedMethod.plus.T)), kotlin.Int)))/ballots">ballots</span><span class="symbol">:</span>&nbsp;<span class="identifier">Pair</span><span class="symbol">&lt;</span><a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code></td>
-</tr>
-<tr>
-<td>
 <a href="result-of.html">resultOf</a></td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">resultOf</span><span class="symbol">(</span><span class="identifier" id="kondorcet.method.GraphBasedMethod$resultOf(kondorcet.Poll((kondorcet.method.GraphBasedMethod.resultOf.T)))/poll">poll</span><span class="symbol">:</span>&nbsp;<a href="../../kondorcet/-poll/index.html"><span class="identifier">Poll</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
 <p>Compute the resultOf of a poll</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="simplify.html">simplify</a></td>
-<td>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">simplify</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Graph</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">,</span>&nbsp;<span class="identifier">Int</span><span class="symbol">&gt;</span></code>
-<p>Returns a simplified version of the graph, without edg twins.</p>
 </td>
 </tr>
 </tbody>
@@ -63,7 +41,7 @@
 <tbody>
 <tr>
 <td>
-<a href="../-condorcet-method/index.html">CondorcetMethod</a></td>
+<a href="../-condorcet-method.html">CondorcetMethod</a></td>
 <td>
 <code><span class="keyword">object </span><span class="identifier">CondorcetMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GraphBasedMethod</span></code>
 <p>Standard condorcet method poll. It does not ensure to get a single winner, but if it does this guaranteed to be a condorcet winner.</p>
@@ -71,7 +49,7 @@
 </tr>
 <tr>
 <td>
-<a href="../-schulze-method/index.html">SchulzeMethod</a></td>
+<a href="../-schulze-method.html">SchulzeMethod</a></td>
 <td>
 <code><span class="keyword">object </span><span class="identifier">SchulzeMethod</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GraphBasedMethod</span></code>
 <p>Schulze method poll. It ensure to get a single winner and this winner will be a condorcet winner if possible.</p>

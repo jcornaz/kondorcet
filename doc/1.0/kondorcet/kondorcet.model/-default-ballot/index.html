@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DefaultBallot - kondorcet</title>
+<link rel="stylesheet" href="..\..\..\style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kondorcet</a>&nbsp;/&nbsp;<a href="../index.html">kondorcet.model</a>&nbsp;/&nbsp;<a href=".">DefaultBallot</a><br/>
+<br/>
+<h1>DefaultBallot</h1>
+<code><span class="keyword">class </span><span class="identifier">DefaultBallot</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Vote ballot</p>
+<p>Contains all the candidates ordered by preferences.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="-init-.html">&lt;init&gt;</a></td>
+<td>
+<code><span class="identifier">DefaultBallot</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="kondorcet.model.DefaultBallot$<init>(kotlin.Array((kondorcet.model.DefaultBallot.T)))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">DefaultBallot</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="kondorcet.model.DefaultBallot$<init>(kotlin.Array((kotlin.collections.Collection((kondorcet.model.DefaultBallot.T)))))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span></code><code><span class="identifier">DefaultBallot</span><span class="symbol">(</span><span class="identifier" id="kondorcet.model.DefaultBallot$<init>(kotlin.collections.List((kotlin.collections.Set((kondorcet.model.DefaultBallot.T)))))/orderedCandidates">orderedCandidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">List</span><span class="symbol">&lt;</span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">=</span>&nbsp;emptyList()<span class="symbol">)</span></code>
+<p>Vote ballot</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="candidates.html">candidates</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">candidates</span><span class="symbol">: </span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Candidates</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="ordered-candidates.html">orderedCandidates</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">orderedCandidates</span><span class="symbol">: </span><span class="identifier">List</span><span class="symbol">&lt;</span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Each element of this list is a set of candidate who are ex aequo.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="winner.html">winner</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">winner</span><span class="symbol">: </span><span class="identifier">T</span><span class="symbol">?</span></code>
+<p>Single winner (if there is one)</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="winners.html">winners</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">winners</span><span class="symbol">: </span><span class="identifier">Set</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>List of winner (many candidates means ex aequo)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="equals.html">equals</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="kondorcet.model.DefaultBallot$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Boolean</span></code></td>
+</tr>
+<tr>
+<td>
+<a href="hash-code.html">hashCode</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Int</span></code></td>
+</tr>
+<tr>
+<td>
+<a href="to-string.html">toString</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">String</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="../with.html">with</a></td>
+<td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Any</span><span class="symbol">&gt;</span> <a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">with</span><span class="symbol">(</span><span class="identifier" id="kondorcet.model$with(kondorcet.Ballot((kondorcet.model.with.T)), kotlin.collections.Collection((kondorcet.model.with.T)))/candidates">candidates</span><span class="symbol">:</span>&nbsp;<span class="identifier">Collection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../kondorcet/-ballot/index.html"><span class="identifier">Ballot</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Create a ballot that have at least all the specified candidates</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
