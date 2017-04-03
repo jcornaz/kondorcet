@@ -3,7 +3,7 @@ package kondorcet
 import kondorcet.method.RelativeMajorityMethod
 import kondorcet.model.ballot
 import kondorcet.model.pollOf
-import kondorcet.model.result
+import kondorcet.model.getResult
 import org.junit.Assert
 import org.junit.Test
 
@@ -19,7 +19,7 @@ class RelativeMajorityMethodTest {
         )
 
         val expected = ballot('A', 'B', 'C')
-        val actual = poll.result(RelativeMajorityMethod)
+        val actual = poll.getResult(RelativeMajorityMethod)
 
         Assert.assertEquals(expected, actual)
     }

@@ -4,7 +4,7 @@ import kondorcet.method.CondorcetMethod
 import kondorcet.method.SchulzeMethod
 import kondorcet.model.ballot
 import kondorcet.model.pollOf
-import kondorcet.model.result
+import kondorcet.model.getResult
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -31,7 +31,7 @@ class SchulzeMethodTest : CondorcetProofMethodTest() {
         )
 
         val expected = ballot('E', 'A', 'C', 'B', 'D')
-        val actual = poll.result(SchulzeMethod)
+        val actual = poll.getResult(SchulzeMethod)
 
         assertEquals(expected, actual)
     }

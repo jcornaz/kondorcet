@@ -19,7 +19,7 @@ abstract class CondorcetProofMethodTest {
         )
 
         val expected = ballot('C', 'B', 'A')
-        val actual = poll.result(method)
+        val actual = poll.getResult(method)
 
         Assert.assertEquals(expected, actual)
     }
@@ -35,7 +35,7 @@ abstract class CondorcetProofMethodTest {
         )
 
         val expected = ballot('A', 'B', 'C')
-        val actual = poll.result(method)
+        val actual = poll.getResult(method)
 
         Assert.assertEquals(expected, actual)
     }
@@ -48,7 +48,7 @@ abstract class CondorcetProofMethodTest {
         poll += ballot('A', 'C', 'B', 'D')
 
         val expected = ballot(setOf('A'), setOf('B', 'C'), setOf('D'))
-        val actual = poll.result(CondorcetMethod)
+        val actual = poll.getResult(CondorcetMethod)
 
         Assert.assertEquals(expected, actual)
     }

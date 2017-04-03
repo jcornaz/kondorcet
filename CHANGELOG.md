@@ -4,12 +4,13 @@
 * The extension function `Ballot.with` create an copy of the ballot which contains all given candidates.
 
 ### Changed
-* [API-BREAK] Poll is now immutable
-* [API-BREAK] Polls and Ballots implementation moved to the package "model"
-* [API-BREAK] Ballot cannot be invalid anymore
+* [API-BREAK] `Poll` is now immutable
+* [API-BREAK] Polls and Ballots implementations has been moved to the package `kondorcet.model`
+* [API-BREAK] `Ballot` cannot be invalid anymore
+* [API-BREAK] `Poll.result` has been renamed to `Poll.getResult`
 
 ### Removed
-* [API-BREAK] CheckedPoll has been removed because no longer necessary due to changes of poll and ballots (see above)
+* [API-BREAK] `CheckedPoll` has been removed because no longer necessary due to changes of poll and ballots (see above)
 
 ### Dependencies changes
 #### Added
