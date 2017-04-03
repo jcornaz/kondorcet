@@ -17,7 +17,7 @@ object CondorcetMethod : GraphBasedMethod() {
             graph.toBallot()
 
     /** Returns a ballots representing the graph (as a victory graph) */
-    fun <T : Any> Graph<T, Any>.toBallot(): Ballot<T> {
+    internal fun <T : Any> Graph<T, Any>.toBallot(): Ballot<T> {
 
         val (graph, winners) = extractCandidates(vertices, { getDegreeTo(it) == 0 && getDegreeFrom(it) > 0 }) { list, set -> list + listOf(set) }
         val (_, losers) = graph.extractCandidates(vertices - winners.flatten(), { getDegreeFrom(it) == 0 }) { list, set -> listOf(set) + list }
@@ -33,7 +33,7 @@ object CondorcetMethod : GraphBasedMethod() {
      * @param selectCandidate Method to select extractable candidates
      * @return a pair with : the graph without the extracted candidates and the extracted candidates
      */
-    fun <T : Any, W : Any> Graph<T, W>.extractCandidates(
+    internal fun <T : Any, W : Any> Graph<T, W>.extractCandidates(
             candidates: Collection<T>,
             selectCandidate: Graph<T, Any>.(candidate: T) -> Boolean,
             merge: (List<Set<T>>, Set<T>) -> List<Set<T>>

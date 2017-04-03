@@ -21,7 +21,7 @@ object SchulzeMethod : GraphBasedMethod() {
     /**
      * Returns the widest paths of the graph with the Floyd Warshall Algorithm
      */
-    fun <T : Any> Graph<T, Int>.widestPath(): Graph<T, Int> {
+    internal fun <T : Any> Graph<T, Int>.widestPath(): Graph<T, Int> {
         var result: Graph<T, Int> = SimpleGraph(vertices)
 
         for ((source, target, weight) in edges) {

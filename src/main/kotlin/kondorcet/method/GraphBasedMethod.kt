@@ -22,7 +22,7 @@ abstract class GraphBasedMethod : VoteMethod {
         return ballotOf(graph.simplify())
     }
 
-    operator fun <T : Any> Graph<T, Int>.plus(ballots: Pair<Ballot<T>, Int>): Graph<T, Int> {
+    internal operator fun <T : Any> Graph<T, Int>.plus(ballots: Pair<Ballot<T>, Int>): Graph<T, Int> {
         val (ballot, count) = ballots
         var result = this + ballot.candidates
         var losers = ballot.orderedCandidates
@@ -47,7 +47,7 @@ abstract class GraphBasedMethod : VoteMethod {
      *
      * In case of equality of the twins, the edges are simply removed.
      */
-    fun <T : Any> Graph<T, Int>.simplify(): Graph<T, Int> =
+    internal fun <T : Any> Graph<T, Int>.simplify(): Graph<T, Int> =
             edges
                     .mapValues { (source, target, weight) -> weight - this[target, source].orZero() }
                     .filterValues { it > 0 }
@@ -59,5 +59,5 @@ abstract class GraphBasedMethod : VoteMethod {
      * @receiver A graph adjacency matrix where vertices are candidates and any edge from x to y of weight w represent w victories of x against y.
      * @return A graph adjacency matrix where every vertices are candidates and any edge from x to y represent the victory state of x against y (true = victory, false = defeat)
      */
-    abstract fun <T : Any> ballotOf(graph: Graph<T, Int>): Ballot<T>
+    internal abstract fun <T : Any> ballotOf(graph: Graph<T, Int>): Ballot<T>
 }
