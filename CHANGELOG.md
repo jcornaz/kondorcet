@@ -13,7 +13,8 @@
 * [API-BREAK] `CheckedPoll` has been removed because no longer necessary due to changes of poll and ballots (see above)
 
 ### Fixed
-* Consider missing candidates in ballots as abstentions for candidates pairwise matches.
+* Graph based methods was vulnerable to irrelevant alternatives in case of missing candidates in ballots.
+  It has been solved by counting missing candidates as abstentions in pairwise matches.
 
 ### Dependencies changes
 #### Added
