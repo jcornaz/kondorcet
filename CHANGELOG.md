@@ -1,4 +1,6 @@
 #Change log
+## 1.0-SNAPSHOT
+
 ## 1.0-rc3 (2017-04-04)
 ### Added
 * The extension function `Ballot.with` create an copy of the ballot which contains all given candidates.

@@ -1,5 +1,5 @@
 group 'kondorcet'
-version '1.0-rc3'
+version '1.0-SNAPSHOT'
 
 buildscript {
     ext.api_version = '1.0'
