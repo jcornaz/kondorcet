@@ -12,6 +12,9 @@
 ### Removed
 * [API-BREAK] `CheckedPoll` has been removed because no longer necessary due to changes of poll and ballots (see above)
 
+### Fixed
+* Consider missing candidates in ballots as abstentions for candidates pairwise matches.
+
 ### Dependencies changes
 #### Added
 * [Kable](https://github.com/slimaku/kable) 1.1.0
