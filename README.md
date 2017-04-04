@@ -11,23 +11,24 @@ Kotlin library for [voting systems](https://en.wikipedia.org/wiki/Voting_system)
 
 ## Usage exemple
 ```kotlin
-// Create a poll (this one ensure the validity of the ballots)
-val poll = CheckedPoll<Char>()
+// Create a poll to store ballots
+var poll = emptyPoll<Char>()
 
 // Add ballots to the poll
 // Theses ballot contains the candidates ordered by preferences
-poll.vote(ballot('A', 'C', 'B'), 23)
-poll.vote(ballot('B', 'C', 'A'), 19)
-poll.vote(ballot('C', 'B', 'A'), 16)
-poll.vote(ballot('C', 'A', 'B'), 2)
+poll += ballot('A', 'C', 'B') to 23
+poll += ballot('B', 'C', 'A') to 19
+poll += ballot('C', 'B', 'A') to 16
+poll += ballot('C', 'A', 'B')
+poll += ballot('C', 'A', 'B')
 
 // Compute and return the result
 // The result is an instance of Ballot which contains the candidates ordered from the winners to the losers
-val schulze = poll.result() // [[C], [B], [A]] (Use the Schulze method by default)
+val schulze = poll.getResult() // [[C], [B], [A]] (Use the Schulze method by default)
 
 // Eventualy get the result of other voting methods
-val condorcet = poll.result(CondorcetMethod)            // [[C], [B], [A]] (identical of the Schulze method in this case)
-val relativeMajority = poll.result(RelativeMajority)    // [[A], [B], [C]]
+val condorcet = poll.getResult(CondorcetMethod)            // [[C], [B], [A]] (identical of the Schulze method in this case)
+val relativeMajority = poll.getResult(RelativeMajority)    // [[A], [B], [C]]
 ```
 
 Depending on the given ballots and the used method, there can be status quo between some candidates.
@@ -49,13 +50,11 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.slimaku:kondorcet:v1.0-rc2'
+    compile 'com.github.slimaku:kondorcet:v1.0-rc3'
 }
 ```
 
 You can also use [Jitpack](https://jitpack.io/#slimaku/kraft) with maven, sbt or leiningen.
 
 ## Documentation
-* [Packages](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/)
-* [Base API](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet/)
-* [Vote methods](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/kondorcet.method/)
+* [KDoc](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/)

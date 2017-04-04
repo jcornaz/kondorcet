@@ -1,5 +1,5 @@
 #Change log
-## 1.0-SNAPSHOT
+## 1.0-rc3 (2017-04-04)
 ### Added
 * The extension function `Ballot.with` create an copy of the ballot which contains all given candidates.
 
@@ -26,7 +26,7 @@
 #### Removed
 * [Kraft](https://github.com/slimaku/kraft) 0.1.2
 
-## 1.0-rc2
+## 1.0-rc2 (2016-09-24)
 ### Added
 * Winner(s) properties to the `Ballot` interface
 * Polls
@@ -42,7 +42,7 @@
 ## Fixed
 * The method `Ballot.hasDuplicates` getResult was the inversed
 
-## 1.0-rc1
+## 1.0-rc1 (2017-09-24)
 ### Added
 * Condorcet method
 * Schulze method
