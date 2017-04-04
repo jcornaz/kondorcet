@@ -14,12 +14,24 @@ import kondorcet.utils.orZero
 abstract class GraphBasedMethod : VoteMethod {
 
     override fun <T : Any> resultOf(poll: Poll<T>): Ballot<T> {
-        var graph: Graph<T, Int> = SimpleGraph(poll.candidates)
+        val candidates = poll.candidates
 
-        for (ballot in poll.ballots)
-            graph += ballot.toPair()
+        var graph: Graph<T, Int> = SimpleGraph(candidates)
+        var abstentions = emptyMap<Set<T>, Int>()
 
-        return ballotOf(graph.simplify())
+        for ((ballot, count) in poll.ballots) {
+            graph += ballot to count
+            abstentions += (candidates - ballot.candidates)
+                    .flatMap { c1 -> (candidates - c1).map { c2 -> setOf(c1, c2) } }
+                    .map { it to (abstentions[it].orZero() + count) }
+        }
+
+        return graph.edges
+                .mapValues { (source, target, weight) ->
+                    weight - graph[target, source].orZero() - abstentions[setOf(target, source)].orZero()
+                }
+                .filterValues { it > 0 }
+                .let { ballotOf(SimpleGraph(candidates, it)) }
     }
 
     internal operator fun <T : Any> Graph<T, Int>.plus(ballots: Pair<Ballot<T>, Int>): Graph<T, Int> {
@@ -41,7 +53,7 @@ abstract class GraphBasedMethod : VoteMethod {
     }
 
     /**
-     * Returns a simplified version of the graph, without edg twins.
+     * Returns a simplified version of the graph, without edge twins.
      *
      * In case of twin the two edges are replaced by one edge representing the difference, and pointing in the positive direction.
      *

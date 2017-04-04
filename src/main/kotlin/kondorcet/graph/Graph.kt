@@ -1,6 +1,7 @@
 package kondorcet.graph
 
 import kable.Table
+import kable.count
 
 /**
  * Directed and weighted graph
@@ -30,18 +31,17 @@ internal interface Graph<V : Any, out W : Any> {
      */
     operator fun get(source: V, target: V): W? = edges[source, target]
 
-    /**
-     * Returns the edges having the [source] vertex
-     */
+    /** Returns the edges having the [source] vertex */
     fun getEdgesFrom(source: V): Map<V, W> = edges.getRow(source)
 
-    /**
-     * Returns the edges having the [target] vertex
-     */
+    /** Returns the edges having the [target] vertex */
     fun getEdgesTo(target: V): Map<V, W> = edges.getColumn(target)
 
     /** Returns the number of edges having the [source] vertex */
     fun getDegreeFrom(source: V): Int = getEdgesFrom(source).size
+
+    /** Returns the number of edges having the [vertex] as it source or target */
+    fun getDegreeOf(vertex: V): Int = edges.count { (row, column, _) -> vertex == row || vertex == column }
 
     /** Returns the number of edges having the [target] vertex */
     fun getDegreeTo(target: V): Int = getEdgesTo(target).size

@@ -3,6 +3,7 @@ package kondorcet.method
 import kondorcet.Ballot
 import kondorcet.model.ballot
 import kondorcet.graph.Graph
+import kondorcet.graph.emptyGraph
 import kondorcet.graph.minus
 import kondorcet.method.CondorcetMethod.resultOf
 
@@ -19,9 +20,24 @@ object CondorcetMethod : GraphBasedMethod() {
     /** Returns a ballots representing the graph (as a victory graph) */
     internal fun <T : Any> Graph<T, Any>.toBallot(): Ballot<T> {
 
-        val (graph, winners) = extractCandidates(vertices, { getDegreeTo(it) == 0 && getDegreeFrom(it) > 0 }) { list, set -> list + listOf(set) }
-        val (_, losers) = graph.extractCandidates(vertices - winners.flatten(), { getDegreeFrom(it) == 0 }) { list, set -> listOf(set) + list }
-        val others = (vertices - winners.flatten() - losers.flatten()).let { if (it.isEmpty()) emptyList() else listOf(it.toSet()) }
+        // Extract winners
+        val (graph, winners) = extractCandidates(
+                vertices,
+                { getDegreeTo(it) == 0 && getDegreeFrom(it) > 0 },
+                { list, set -> list + listOf(set) }
+        )
+
+        // Extract losers
+        val (_, losers) = graph.extractCandidates(
+                vertices - winners.flatten(),
+                { getDegreeFrom(it) == 0 && getDegreeTo(it) > 0 },
+                { list, set -> listOf(set) + list }
+        )
+
+        // Get candidates that are no winners or losers
+        val others = (vertices - winners.flatten() - losers.flatten())
+                .filter { getDegreeOf(it) > 0 }
+                .let { if (it.isEmpty()) emptyList() else listOf(it.toSet()) }
 
         return ballot(winners + others + losers)
     }
