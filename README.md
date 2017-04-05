@@ -50,7 +50,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.slimaku:kondorcet:v1.0-rc3'
+    compile 'com.github.slimaku:kondorcet:v1.0.0'
 }
 ```
 

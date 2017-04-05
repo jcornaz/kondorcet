@@ -1,5 +1,5 @@
 #Change log
-## 1.0-SNAPSHOT
+## 1.0.0 (2017-04-05)
 ### Added
 * `Collection<Ballot>.toPoll()` and `Map<Ballot, Int>.toPoll()`
 
