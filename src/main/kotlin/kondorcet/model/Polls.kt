@@ -31,3 +31,11 @@ operator fun <T : Any> Poll<T>.plus(ballot: Ballot<T>): Poll<T> = this + (ballot
  * @return A ballot that represent the better the poll
  */
 fun <T : Any> Poll<T>.getResult(method: VoteMethod = SchulzeMethod) = method.resultOf(this)
+
+/** Create a new poll with the given ballots collection */
+fun <T : Any> Collection<Ballot<T>>.toPoll(): Poll<T> =
+        groupBy { it }.mapValues { it.value.size }.toPoll()
+
+/** Create a new poll with the given ballots counts map */
+fun <T : Any> Map<Ballot<T>, Int>.toPoll(): Poll<T> =
+        pollOf(this)
