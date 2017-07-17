@@ -1,11 +1,11 @@
 # Kondorcet
-[![GPLv3](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://raw.githubusercontent.com/slimaku/kondorcet/master/LICENSE)
-[![JitPack](https://jitpack.io/v/slimaku/kondorcet.svg)](https://jitpack.io/#slimaku/kondorcet)
-[![Build Status](https://travis-ci.org/slimaku/kondorcet.svg?branch=master)](https://travis-ci.org/slimaku/kondorcet)
-[![Code covertage](https://codecov.io/gh/slimaku/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/slimaku/kondorcet)
-[![Codebeat](https://codebeat.co/badges/421770ad-085c-480e-97eb-b46b30234a5e)](https://codebeat.co/projects/github-com-slimaku-kondorcet)
-[![Issues](https://img.shields.io/github/issues/slimaku/kondorcet.svg)](https://github.com/slimaku/kondorcet/issues)
-[![Pull requests](https://img.shields.io/github/issues-pr/slimaku/kondorcet.svg)](https://github.com/slimaku/kondorcet/pulls)
+[![GPLv3](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://raw.githubusercontent.com/jcornaz/kondorcet/master/LICENSE)
+[![JitPack](https://jitpack.io/v/jcornaz/kondorcet.svg)](https://jitpack.io/#jcornaz/kondorcet)
+[![Build Status](https://travis-ci.org/jcornaz/kondorcet.svg?branch=master)](https://travis-ci.org/jcornaz/kondorcet)
+[![Code covertage](https://codecov.io/gh/jcornaz/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/jcornaz/kondorcet)
+[![Codebeat](https://codebeat.co/badges/421770ad-085c-480e-97eb-b46b30234a5e)](https://codebeat.co/projects/github-com-jcornaz-kondorcet)
+[![Issues](https://img.shields.io/github/issues/jcornaz/kondorcet.svg)](https://github.com/jcornaz/kondorcet/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/jcornaz/kondorcet.svg)](https://github.com/jcornaz/kondorcet/pulls)
 
 Kotlin library for [voting systems](https://en.wikipedia.org/wiki/Voting_system), with a strong accent on the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method) and it's derivatives.
 
@@ -50,11 +50,11 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.slimaku:kondorcet:v1.0.0'
+    compile 'com.github.jcornaz:kondorcet:v1.0.0'
 }
 ```
 
-You can also use [Jitpack](https://jitpack.io/#slimaku/kraft) with maven, sbt or leiningen.
+You can also use [Jitpack](https://jitpack.io/#jcornaz/kraft) with maven, sbt or leiningen.
 
 ## Documentation
-* [KDoc](https://slimaku.github.io/kondorcet/doc/1.0/kondorcet/)
+* [KDoc](https://jcornaz.github.io/kondorcet/doc/1.0/kondorcet/)

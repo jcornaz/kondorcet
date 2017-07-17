@@ -36,7 +36,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    compile 'com.github.slimaku:kable:v1.1.0'
+    compile 'com.github.jcornaz:kable:v1.1.0'
 
     testCompile 'junit:junit:4.12'
 }
