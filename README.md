@@ -1,11 +1,10 @@
 # Kondorcet
-[![GPLv3](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://raw.githubusercontent.com/jcornaz/kondorcet/master/LICENSE)
+[![License](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://raw.githubusercontent.com/jcornaz/kondorcet/master/LICENSE)
+[![Project status](https://img.shields.io/badge/status-stable-green.svg)](https://gist.githubusercontent.com/jcornaz/46736c3d1f21b4c929bd97549b7406b2/raw/ProjectStatusFlow)
 [![JitPack](https://jitpack.io/v/jcornaz/kondorcet.svg)](https://jitpack.io/#jcornaz/kondorcet)
 [![Build Status](https://travis-ci.org/jcornaz/kondorcet.svg?branch=master)](https://travis-ci.org/jcornaz/kondorcet)
-[![Code covertage](https://codecov.io/gh/jcornaz/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/jcornaz/kondorcet)
-[![Codebeat](https://codebeat.co/badges/421770ad-085c-480e-97eb-b46b30234a5e)](https://codebeat.co/projects/github-com-jcornaz-kondorcet)
-[![Issues](https://img.shields.io/github/issues/jcornaz/kondorcet.svg)](https://github.com/jcornaz/kondorcet/issues)
-[![Pull requests](https://img.shields.io/github/issues-pr/jcornaz/kondorcet.svg)](https://github.com/jcornaz/kondorcet/pulls)
+[![Code coverage](https://codecov.io/gh/jcornaz/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/jcornaz/kondorcet)
+[![Code quality](https://codebeat.co/badges/89ad94c4-1348-42ea-8211-73e28c36fc6c)](https://codebeat.co/projects/github-com-jcornaz-kondorcet-master)
 
 Kotlin library for [voting systems](https://en.wikipedia.org/wiki/Voting_system), with a strong accent on the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method) and it's derivatives.
 
@@ -54,7 +53,7 @@ dependencies {
 }
 ```
 
-You can also use [Jitpack](https://jitpack.io/#jcornaz/kraft) with maven, sbt or leiningen.
+You can also use [Jitpack](https://jitpack.io/#jcornaz/kondorcet) with maven, sbt or leiningen.
 
 ## Documentation
 * [KDoc](https://jcornaz.github.io/kondorcet/doc/1.0/kondorcet/)
