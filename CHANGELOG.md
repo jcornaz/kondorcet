@@ -1,4 +1,10 @@
 # Change log
+
+## 2.0-SNAPSHOT (unreleased)
+### Dependency updates
+* Kotlin from 1.1.1 to 1.2.31
+
+
 ## 1.0.0 (2017-04-05)
 ### Added
 * `Collection<Ballot>.toPoll()` and `Map<Ballot, Int>.toPoll()`
