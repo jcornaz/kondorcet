@@ -1,12 +1,15 @@
 # Kondorcet
 [![License](https://img.shields.io/badge/license-LGPL--3.0-blue.svg)](LICENSE)
-[![Project status](https://img.shields.io/badge/status-stable-brightgreen.svg)](https://gist.githubusercontent.com/jcornaz/46736c3d1f21b4c929bd97549b7406b2/raw/ProjectStatusFlow)
+[![Project status](https://img.shields.io/badge/status-discontinued-lightgray.svg)](https://gist.githubusercontent.com/jcornaz/46736c3d1f21b4c929bd97549b7406b2/raw/ProjectStatusFlow)
 [![JitPack](https://jitpack.io/v/jcornaz/kondorcet.svg)](https://jitpack.io/#jcornaz/kondorcet)
 [![Build Status](https://travis-ci.org/jcornaz/kondorcet.svg?branch=master)](https://travis-ci.org/jcornaz/kondorcet)
 [![Code coverage](https://codecov.io/gh/jcornaz/kondorcet/branch/master/graph/badge.svg)](https://codecov.io/gh/jcornaz/kondorcet)
 [![Code quality](https://codebeat.co/badges/89ad94c4-1348-42ea-8211-73e28c36fc6c)](https://codebeat.co/projects/github-com-jcornaz-kondorcet-master)
 
 Kotlin library for [voting systems](https://en.wikipedia.org/wiki/Voting_system), with a strong accent on the [Condorcet method](https://en.wikipedia.org/wiki/Condorcet_method) and it's derivatives.
+
+## Status
+This project is discontinued and will no longer be maintained. Everyone is free to fork and create derived products.
 
 ## Usage exemple
 ```kotlin
@@ -37,13 +40,6 @@ In such case `poll.result()` would return something like `[[A, B], [C]]` which w
 * [Schulze](https://en.wikipedia.org/wiki/Schulze_method)
 * [Condorcet](https://en.wikipedia.org/wiki/Condorcet_method)
 * [Relative majority](https://en.wikipedia.org/wiki/Plurality_(voting)#Majority_versus_plurality)
-
-## Incoming features in 2.0
-* [Ranked pair](https://en.wikipedia.org/wiki/Ranked_pairs)
-* [Randomized condorcet](http://www.science4all.org/wp-content/uploads/RandomizedCondorcet.pdf)
-* Non-blocking API with Kotlin Couroutines
-* Multiplatform support (JS, Android and Native)
-* Usage of [persistent datastructures](https://en.wikipedia.org/wiki/Persistent_data_structure) to speed up poll building
 
 ## Add the library to your project
 With [Gradle](https://gradle.org) :
